@@ -1,0 +1,81 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+
+# Node
+node_modules/
+dist/
+build/
+.npm
+.eslintcache
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Docker
+*.log
+
+# Logs directory
+logs/
+*.log
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Data files (JSONL files are tracked in git for now, but can be excluded later)
+# backend/data/*.jsonl
+
+# Model cache
+.cache/
+models/
+
+# archives
+backend/data/law/scripts/_archive
+backend/_archive
+
+
+# Data
+backend/data/counsel/
+backend/data/criteria/
+backend/data/dispute/
+backend/data/law/raw
+
+
+# Backup Data
+backup.sql
+
+
+# Agents
+Agents
+.agent
+.cursorrules
+AGENTS.md
+CLAUDE.md
+AI_MEMO.md
+AI_MEMO_S1.md
+docs/sprint/
