@@ -72,8 +72,8 @@ graph TB
     end
     
     subgraph "External Services"
-        O -.LLM API 호출.- Z[OpenAI GPT-4]
-        O -.LLM API 호출.- AA[Anthropic Claude]
+        O -.LLM API 호출.- Z[OpenAI GPT-4o]
+        O -.LLM API 호출.- AA[OpenAI GPT-4o]
         K -.임베딩 생성.- AB[Embedding API Server]
         AB -->|KURE-v1 1024d| AC[RunPod GPU]
     end
@@ -345,8 +345,8 @@ graph TB
 | **데이터베이스** | PostgreSQL | 16 | 관계형 데이터베이스 |
 | | pgvector | 0.5+ | 벡터 유사도 검색 (IVFFlat) |
 | | **데이터 규모** | 30,754개 청크 | 법령(5,455) + 상담(13,544) + 분쟁(11,755) |
-| **AI/ML** | OpenAI GPT-4 | - | 답변 생성 |
-| | Anthropic Claude 3 | - | 법률 검토 |
+| **AI/ML** | OpenAI GPT-4o | - | 답변 생성 |
+| | OpenAI GPT-4o | - | 법률 검토 |
 | | KURE-v1 | 1024차원 | 한국어 임베딩 모델 |
 | | RunPod GPU | - | 임베딩 API 서버 |
 | **인프라** | Docker Compose | - | 로컬 개발 환경 |
@@ -358,7 +358,7 @@ graph TB
 
 | 구분 | 모델/알고리즘 | 주요 파라미터 | 역할 |
 |---|---|---|---|
-| **LLM** | GPT-4o-mini | Temperature=0.3 | 최종 답변 생성 및 구조화 |
+| **LLM** | GPT-4o | Temperature=0.3 | 최종 답변 생성 및 구조화 |
 | **Dense Embedding** | intfloat/multilingual-e5-large | Dimension=1024 | 의미 기반 벡터 검색 (Semantic Search) |
 | **Sparse Embedding** | naver/splade-cocondenser-ensembledistil | - | 키워드 매칭 보완 (Lexical Match) |
 | **Fusion** | RRF (Reciprocal Rank Fusion) | k=60 | Dense와 Sparse 검색 결과 재순위화 |
