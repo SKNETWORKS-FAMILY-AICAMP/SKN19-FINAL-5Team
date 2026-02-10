@@ -1,471 +1,227 @@
+"""
+똑소리 프로젝트 - FastAPI 메인 애플리케이션
+
+한국 소비자 분쟁 조정 RAG 챗봇 API 서버입니다.
+
+API 라우터:
+    - /: 서버 정보
+    - /health: 헬스체크
+    - /search: 벡터 검색
+    - /chat: 챗봇 응답 (일반)
+    - /chat/stream: 챗봇 응답 (SSE 스트리밍)
+    - /case/{uid}: 사례 조회
+    - /metrics/*: 에이전트 메트릭스
+"""
+
+import logging
 import os
-import time
-import asyncio
-from fastapi import FastAPI, HTTPException, Depends
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
-from pydantic import BaseModel, Field, field_validator
-from typing import Optional, List, Dict, Any, Generator
+
 from dotenv import load_dotenv
-# from fastmcp import FastMCP
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from prometheus_fastapi_instrumentator import Instrumentator
+from slowapi.errors import RateLimitExceeded
 
-from rag import RAGRetriever, HybridRetriever, RAGGenerator, SearchResult
-from rag.logger import get_rag_logger
-from utils.embedding_connection import get_embedding_api_url
-
-# 환경 변수 로드
+# 환경변수 로드
 load_dotenv()
 
-app = FastAPI(
-    title="똑소리 API",
-    version="0.4.1",  # Refactored for concurrency safety
-    description="한국 소비자 분쟁 조정 RAG 챗봇 API"
+# 로깅 설정
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    handlers=[logging.StreamHandler()],
 )
 
+# PII 필터를 모든 로그 핸들러에 연결 (SEC-04)
+from app.common.logging.pii_redactor import PIIRedactingFilter
+
+for handler in logging.root.handlers:
+    handler.addFilter(PIIRedactingFilter())
+
+logger = logging.getLogger(__name__)
+
+# Langsmith 트레이싱 로그
+if os.getenv("LANGCHAIN_TRACING_V2", "false").lower() == "true":
+    logger.info(
+        f"[Langsmith] Tracing enabled - Project: {os.getenv('LANGCHAIN_PROJECT', 'default')}"
+    )
+
+# API 라우터 import
+from app.api import (
+    admin_router,
+    auth_router,
+    board_router,
+    case_router,
+    chat_router,
+    health_router,
+    metrics_router,
+    search_router,
+    users_router,
+)
+
+# FastAPI 앱 생성 (SEC-20: 프로덕션에서 Swagger 비활성화)
+_is_debug = os.getenv("DEBUG", "false").lower() == "true"
+app = FastAPI(
+    title="똑소리 API",
+    version="0.4.2",  # Refactored with modular routers
+    description="한국 소비자 분쟁 조정 RAG 챗봇 API",
+    docs_url="/docs" if _is_debug else None,
+    redoc_url="/redoc" if _is_debug else None,
+    openapi_url="/openapi.json" if _is_debug else None,
+)
+
+# Prometheus 모니터링
+Instrumentator().instrument(app).expose(app)
+
 # CORS 설정
-cors_origins = [origin.strip() for origin in os.getenv('CORS_ORIGINS', 'http://localhost:5173').split(',')]
+cors_origins = [
+    origin.strip()
+    for origin in os.getenv("CORS_ORIGINS", "http://localhost:5173").split(",")
+]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=cors_origins,
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["Authorization", "Content-Type", "Accept", "X-Request-ID"],
 )
 
-# DB 설정
-db_config = {
-    'host': os.getenv('DB_HOST', 'localhost'),
-    'port': int(os.getenv('DB_PORT', 5432)),
-    'database': os.getenv('DB_NAME', 'ddoksori'),
-    'user': os.getenv('DB_USER', 'postgres'),
-    'password': os.getenv('DB_PASSWORD', 'postgres'),
-    'client_encoding': 'UTF8'  # Ensure UTF-8 encoding for Korean text
-}
-
-# RAG 컴포넌트 설정
-# Adaptive Embedding Strategy: Determine best URL (Remote -> Local Running -> Start Local)
-embed_api_url = get_embedding_api_url()
-# Update env var for other components that might check it
-os.environ['EMBED_API_URL'] = embed_api_url
-retrieval_mode = os.getenv('RETRIEVAL_MODE', 'dense')  # 'hybrid', 'dense'
-
-generator = RAGGenerator()
-rag_logger = get_rag_logger()
+# 보안 헤더 미들웨어 (SEC-07)
+from starlette.middleware.base import BaseHTTPMiddleware
 
 
-# Dependency for Retriever
-def get_retriever() -> Generator[Any, None, None]:
-    """
-    Retriever 인스턴스를 생성하고 연결을 관리하는 Dependency
-    요청마다 독립적인 DB 연결을 보장함
-    """
-    if retrieval_mode == 'hybrid':
-        retriever_instance = HybridRetriever(db_config, embed_api_url)
-    else:
-        retriever_instance = RAGRetriever(db_config, embed_api_url)
-    
+class SecurityHeadersMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request, call_next):
+        response = await call_next(request)
+        response.headers["X-Content-Type-Options"] = "nosniff"
+        response.headers["X-Frame-Options"] = "DENY"
+        response.headers["X-XSS-Protection"] = "1; mode=block"
+        response.headers["Strict-Transport-Security"] = (
+            "max-age=31536000; includeSubDomains"
+        )
+        response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+        response.headers["Permissions-Policy"] = (
+            "camera=(), microphone=(), geolocation=()"
+        )
+        return response
+
+
+app.add_middleware(SecurityHeadersMiddleware)
+
+# Rate Limiting 설정 (SEC-04)
+from app.middleware.rate_limiter import limiter, rate_limit_exceeded_handler
+
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, rate_limit_exceeded_handler)
+
+# 라우터 등록
+app.include_router(health_router)
+app.include_router(chat_router)
+app.include_router(search_router)
+app.include_router(case_router)
+app.include_router(metrics_router)
+app.include_router(auth_router)
+app.include_router(admin_router)
+app.include_router(board_router)
+app.include_router(users_router)
+
+
+# 시작 로그
+@app.on_event("startup")
+async def startup_event():
+    """애플리케이션 시작 시 로그 및 서비스 시작"""
+    retrieval_mode = os.getenv("RETRIEVAL_MODE", "dense")
+    memory_backend = os.getenv("CONVERSATION_MEMORY_BACKEND", "memory")
+    logger.info("[Startup] 똑소리 API 서버 시작")
+    logger.info(f"[Startup] Retrieval Mode: {retrieval_mode}")
+    logger.info(f"[Startup] Conversation Memory Backend: {memory_backend}")
+    logger.info("[Startup] Embedding: OpenAI text-embedding-3-large")
+
+    # 템플릿 캐시 초기화 (개발 중 템플릿 변경 반영)
     try:
-        retriever_instance.connect()
-        yield retriever_instance
-    finally:
-        retriever_instance.close()
+        from app.agents.answer_generation.template_loader import TemplateLoader
 
-
-def _serialize_search_result(chunk: SearchResult) -> Dict[str, Any]:
-    """SearchResult 객체를 dict로 변환 (S1-1 citation metadata)"""
-    return {
-        'chunk_id': chunk.chunk_id,
-        'doc_id': chunk.doc_id,
-        'chunk_type': chunk.chunk_type,
-        'content': chunk.content,
-        'doc_title': chunk.doc_title,
-        'doc_type': chunk.doc_type,
-        'category_path': chunk.category_path,
-        'similarity': chunk.similarity,
-        # S1-1 Citation Metadata
-        'source_org': chunk.source_org,
-        'url': chunk.url,
-        'decision_date': chunk.decision_date,
-        'collected_at': chunk.collected_at
-    }
-
-
-# Request/Response 모델
-class ChatRequest(BaseModel):
-    message: str = Field(..., min_length=1, description="사용자 질문")
-    top_k: Optional[int] = Field(default=5, ge=1, le=100, description="검색 결과 수")
-    chunk_types: Optional[List[str]] = None
-    agencies: Optional[List[str]] = None
-
-    @field_validator('message')
-    @classmethod
-    def message_not_empty(cls, v):
-        if not v or not v.strip():
-            raise ValueError('메시지는 빈 문자열일 수 없습니다')
-        return v.strip()
-
-
-class ChatResponse(BaseModel):
-    answer: str
-    chunks_used: int
-    model: str
-    sources: List[dict]
-    # S1-1 Safety Guardrails
-    has_sufficient_evidence: bool = True
-    clarifying_questions: List[str] = []
-
-
-class SearchRequest(BaseModel):
-    query: str = Field(..., min_length=1, description="검색 쿼리")
-    top_k: Optional[int] = Field(default=5, ge=1, le=100, description="검색 결과 수")
-    chunk_types: Optional[List[str]] = None
-    agencies: Optional[List[str]] = None
-
-    @field_validator('query')
-    @classmethod
-    def query_not_empty(cls, v):
-        if not v or not v.strip():
-            raise ValueError('쿼리는 빈 문자열일 수 없습니다')
-        return v.strip()
-
-
-# API 엔드포인트
-@app.get("/")
-async def root():
-    return {
-        "message": "똑소리 API 서버가 정상적으로 실행 중입니다.",
-        "version": "0.4.1",
-        "retrieval_mode": retrieval_mode,
-        "features": [
-            "Hybrid RAG 검색 (Dense + Lexical + RRF)" if retrieval_mode == 'hybrid' else "RAG 검색",
-            "LLM 답변 생성"
-        ]
-    }
-
-
-@app.get("/health")
-async def health_check():
-    """서버 상태 확인"""
-    # Note: Dedicated connection for health check
-    try:
-        if retrieval_mode == 'hybrid':
-            checker = HybridRetriever(db_config, embed_api_url)
-        else:
-            checker = RAGRetriever(db_config, embed_api_url)
-        
-        checker.connect()
-        checker.close()
-        return {"status": "healthy", "database": "connected"}
+        TemplateLoader.reload_templates()
+        logger.info("[Startup] Template cache cleared - will reload fresh templates")
     except Exception as e:
-        # Safe string conversion for Windows CP949/EUC-KR locale issues
-        try:
-            error_msg = str(e)
-        except UnicodeDecodeError:
-            error_msg = repr(e)
-        return {"status": "unhealthy", "error": error_msg}
+        logger.warning(f"[Startup] Template cache clear failed: {e}")
 
+    # ConversationCleanupService 비활성화
+    # NOTE: ddoksori_rw 유저에 DELETE 권한이 없어 매분 permission denied 에러 발생.
+    # 만료 세션은 expires_at으로 이미 기능적 만료 처리되므로, 물리 삭제는 불필요.
+    # 추후 소프트 삭제 또는 별도 관리자 배치로 전환 예정.
+    # try:
+    #     from app.supervisor.persistence.cleanup import get_cleanup_service
+    #     cleanup_service = get_cleanup_service()
+    #     await cleanup_service.start()
+    #     logger.info("[Startup] ConversationCleanupService 시작 완료")
+    # except Exception as e:
+    #     logger.warning(f"[Startup] ConversationCleanupService 시작 실패: {e}")
+    logger.info("[Startup] ConversationCleanupService 비활성화 (DELETE 권한 없음)")
 
-@app.post("/search")
-async def search(
-    request: SearchRequest,
-    retriever=Depends(get_retriever)
-):
-    """
-    Vector DB에서 유사한 사례 검색 (LLM 답변 생성 없이 검색만)
-    """
-    try:
-        # chunk_types 필터 처리 (리스트의 첫 번째 값 사용)
-        chunk_type_filter = request.chunk_types[0] if request.chunk_types else None
+    # SEC-14: 기본 시크릿 사용 경고
+    from app.common.config import get_config
 
-        # Hybrid search (RRF fusion) or vector-only
-        if hasattr(retriever, 'search') and retrieval_mode == 'hybrid':
-            chunks = retriever.search(
-                query=request.query,
-                top_k=request.top_k,
-                chunk_type_filter=chunk_type_filter
-            )
-        else:
-            chunks = retriever.vector_search(
-                query=request.query,
-                top_k=request.top_k,
-                chunk_type_filter=chunk_type_filter
-            )
-
-        # SearchResult 객체를 dict로 변환
-        results = [_serialize_search_result(chunk) for chunk in chunks]
-
-        return {
-            "query": request.query,
-            "results_count": len(results),
-            "results": results
-        }
-
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"검색 중 오류 발생: {str(e)}")
-
-
-@app.post("/chat", response_model=ChatResponse)
-async def chat(
-    request: ChatRequest,
-    retriever=Depends(get_retriever)
-):
-    """
-    RAG 기반 챗봇 응답 생성
-    """
-    start_time = time.time()
-    log_entry = rag_logger.create_entry(query=request.message)
-
-    # chunk_types 필터 처리 (리스트의 첫 번째 값 사용)
-    chunk_type_filter = request.chunk_types[0] if request.chunk_types else None
-
-    try:
-        # 1. 유사 청크 검색 (2단계: mediation_case 우선 → counsel_case 보조)
-        if retrieval_mode == 'hybrid' and hasattr(retriever, 'search_prioritized'):
-            # 2단계 우선순위 검색 사용
-            chunks = retriever.search_prioritized(
-                query=request.message,
-                top_k=request.top_k,
-                primary_doc_type='mediation_case',
-                secondary_doc_type='counsel_case'
-            )
-            chunks_dict = [_serialize_search_result(c) for c in chunks]
-
-            rag_logger.log_retrieval(
-                entry=log_entry,
-                mode='hybrid_prioritized',
-                top_k=request.top_k,
-                embedding_time_ms=0,
-                search_time_ms=0,
-                chunks=chunks_dict,
-                dense_candidates=0,
-                lexical_candidates=0
-            )
-        elif hasattr(retriever, 'vector_search_instrumented'):
-            search_result = retriever.vector_search_instrumented(
-                query=request.message,
-                top_k=request.top_k,
-                chunk_type_filter=chunk_type_filter
-            )
-            chunks = search_result['results']
-            chunks_dict = [_serialize_search_result(c) for c in chunks]
-
-            rag_logger.log_retrieval(
-                entry=log_entry,
-                mode='dense',
-                top_k=request.top_k,
-                embedding_time_ms=search_result['embedding_time_ms'],
-                search_time_ms=search_result['search_time_ms'],
-                chunks=chunks_dict
-            )
-        else:
-            # Fallback to non-instrumented
-            if hasattr(retriever, 'search_prioritized') and retrieval_mode == 'hybrid':
-                chunks = retriever.search_prioritized(
-                    query=request.message,
-                    top_k=request.top_k,
-                    primary_doc_type='mediation_case',
-                    secondary_doc_type='counsel_case'
-                )
-            elif hasattr(retriever, 'search') and retrieval_mode == 'hybrid':
-                chunks = retriever.search(
-                    query=request.message,
-                    top_k=request.top_k,
-                    chunk_type_filter=chunk_type_filter
-                )
-            else:
-                chunks = retriever.vector_search(
-                    query=request.message,
-                    top_k=request.top_k,
-                    chunk_type_filter=chunk_type_filter
-                )
-            chunks_dict = [_serialize_search_result(c) for c in chunks]
-            rag_logger.log_retrieval(
-                entry=log_entry,
-                mode=retrieval_mode,
-                top_k=request.top_k,
-                embedding_time_ms=0,
-                search_time_ms=0,
-                chunks=chunks_dict
-            )
-
-        if not chunks:
-            rag_logger.log_response(
-                entry=log_entry,
-                answer="",
-                chunks_used=0,
-                sources_count=0,
-                status="no_results"
-            )
-            rag_logger.finalize(log_entry, start_time)
-            rag_logger.save(log_entry)
-
-            return ChatResponse(
-                answer="죄송합니다. 관련된 분쟁조정 사례를 찾을 수 없습니다. 다른 질문을 해주시겠어요?",
-                chunks_used=0,
-                model=generator.model,
-                sources=[]
-            )
-
-        # 2. LLM으로 답변 생성 (instrumented)
-        if hasattr(generator, 'generate_answer_instrumented'):
-            result = generator.generate_answer_instrumented(
-                query=request.message,
-                chunks=chunks_dict
-            )
-
-            rag_logger.log_llm(
-                entry=log_entry,
-                model=result['model'],
-                system_prompt=result.get('system_prompt', ''),
-                user_prompt=result.get('user_prompt', ''),
-                response_time_ms=result.get('response_time_ms', 0),
-                prompt_tokens=result.get('prompt_tokens', 0),
-                completion_tokens=result.get('completion_tokens', 0),
-                has_sufficient_evidence=result.get('has_sufficient_evidence', True),
-                clarifying_questions=result.get('clarifying_questions', [])
-            )
-        else:
-            result = generator.generate_answer(
-                query=request.message,
-                chunks=chunks_dict
-            )
-            rag_logger.log_llm(
-                entry=log_entry,
-                model=result['model'],
-                system_prompt='',
-                user_prompt='',
-                response_time_ms=0
-            )
-
-        # 3. 응답 포맷팅 (S1-1 correct field mapping)
-        sources = [
-            {
-                'doc_id': chunk.doc_id,
-                'chunk_id': chunk.chunk_id,
-                'chunk_type': chunk.chunk_type,
-                'source_org': chunk.source_org,
-                'url': chunk.url,
-                'decision_date': chunk.decision_date,
-                'collected_at': chunk.collected_at,
-                'doc_title': chunk.doc_title,
-                'similarity': chunk.similarity
-            }
-            for chunk in chunks
-        ]
-
-        # Log response
-        rag_logger.log_response(
-            entry=log_entry,
-            answer=result['answer'],
-            chunks_used=result['chunks_used'],
-            sources_count=len(sources),
-            status="success"
+    config = get_config()
+    if config.auth.jwt_secret_key == "dev_secret_key_change_in_production":
+        logger.warning(
+            "[Security] JWT_SECRET_KEY가 기본값입니다. 프로덕션에서 반드시 변경하세요!"
+        )
+    if config.database.password == "postgres":
+        logger.warning(
+            "[Security] DB_PASSWORD가 기본값입니다. 프로덕션에서 반드시 변경하세요!"
         )
 
-        rag_logger.finalize(log_entry, start_time)
-        rag_logger.save(log_entry)
 
-        return ChatResponse(
-            answer=result['answer'],
-            chunks_used=result['chunks_used'],
-            model=result['model'],
-            sources=sources,
-            has_sufficient_evidence=result.get('has_sufficient_evidence', True),
-            clarifying_questions=result.get('clarifying_questions', [])
-        )
+@app.on_event("shutdown")
+async def shutdown_event():
+    """애플리케이션 종료 시 정리"""
+    logger.info("[Shutdown] 똑소리 API 서버 종료 중...")
 
-    except Exception as e:
-        rag_logger.log_response(
-            entry=log_entry,
-            answer="",
-            chunks_used=0,
-            sources_count=0,
-            status="error",
-            error_message=str(e)
-        )
-        rag_logger.finalize(log_entry, start_time)
-        rag_logger.save(log_entry)
-
-        raise HTTPException(status_code=500, detail=f"답변 생성 중 오류 발생: {str(e)}")
+    # ConversationCleanupService 종료 (비활성화됨)
+    # try:
+    #     from app.supervisor.persistence.cleanup import get_cleanup_service
+    #     cleanup_service = get_cleanup_service()
+    #     await cleanup_service.stop()
+    #     logger.info("[Shutdown] ConversationCleanupService 종료 완료")
+    # except Exception as e:
+    #     logger.warning(f"[Shutdown] ConversationCleanupService 종료 실패: {e}")
 
 
-@app.post("/chat/stream")
-async def chat_stream(
-    request: ChatRequest,
-    retriever=Depends(get_retriever)
-):
-    """
-    RAG 기반 스트리밍 챗봇 응답 생성
-    """
-    try:
-        # chunk_types 필터 처리 (리스트의 첫 번째 값 사용)
-        chunk_type_filter = request.chunk_types[0] if request.chunk_types else None
+from app.api.dependencies import (
+    get_db_config,
+    get_retrieval_mode,
+    get_retriever,
+)
 
-        # 유사 청크 검색
-        if hasattr(retriever, 'search') and retrieval_mode == 'hybrid':
-            chunks = retriever.search(
-                query=request.message,
-                top_k=request.top_k,
-                chunk_type_filter=chunk_type_filter
-            )
-        else:
-            chunks = retriever.vector_search(
-                query=request.message,
-                top_k=request.top_k,
-                chunk_type_filter=chunk_type_filter
-            )
+# 하위 호환성을 위한 export
+# 기존에 main.py에서 직접 import하던 코드가 있을 수 있음
+from app.api.models import (
+    AgencyRecommendation,
+    CaseReference,
+    ChatRequest,
+    ChatResponse,
+    CriteriaReference,
+    LawReference,
+    NodeTiming,
+    SearchRequest,
+    SimilarCases,
+)
 
-        if not chunks:
-            async def no_results():
-                yield "죄송합니다. 관련된 분쟁조정 사례를 찾을 수 없습니다."
-            return StreamingResponse(no_results(), media_type="text/plain")
-
-        # SearchResult를 dict로 변환
-        chunks_dict = [_serialize_search_result(chunk) for chunk in chunks]
-
-        # 스트리밍 답변 생성 (동기 함수를 비동기로 실행)
-        async def stream_response():
-            result = await asyncio.to_thread(
-                generator.generate_answer, request.message, chunks_dict
-            )
-            yield result['answer']
-
-        return StreamingResponse(
-            stream_response(),
-            media_type="text/plain"
-        )
-
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"답변 생성 중 오류 발생: {str(e)}")
-
-
-@app.get("/case/{case_uid}")
-async def get_case(
-    case_uid: str,
-    retriever=Depends(get_retriever)
-):
-    """
-    특정 사례의 전체 정보 조회
-    """
-    try:
-        chunks = retriever.get_case_chunks(case_uid)
-        
-        if not chunks:
-            raise HTTPException(status_code=404, detail="사례를 찾을 수 없습니다.")
-        
-        return {
-            "case_uid": case_uid,
-            "chunks_count": len(chunks),
-            "chunks": chunks
-        }
-        
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"사례 조회 중 오류 발생: {str(e)}")
-
-
-# mcp = FastMCP.from_fastapi(app)
-
-# if __name__ == "__main__":
-#     mcp.run()
+__all__ = [
+    "app",
+    # 모델
+    "ChatRequest",
+    "ChatResponse",
+    "SearchRequest",
+    "AgencyRecommendation",
+    "CaseReference",
+    "LawReference",
+    "CriteriaReference",
+    "SimilarCases",
+    "NodeTiming",
+    # 의존성
+    "get_retriever",
+    "get_db_config",
+    "get_retrieval_mode",
+]

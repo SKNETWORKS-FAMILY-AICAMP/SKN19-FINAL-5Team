@@ -1,0 +1,114 @@
+# Production Docker Compose for DDOKSORI
+# Usage:
+#   export ECR_REGISTRY=123456789.dkr.ecr.ap-northeast-2.amazonaws.com
+#   docker compose -f docker-compose.prod.yml up -d
+
+services:
+  backend:
+    image: ${ECR_REGISTRY}/ddoksori-backend:${IMAGE_TAG:-latest}
+    restart: always
+    expose:
+      - "8000"
+    environment:
+      # === AWS Secrets Manager ===
+      - USE_AWS_SECRETS=${USE_AWS_SECRETS:-false}
+      - SECRETS_ENV=${SECRETS_ENV:-staging}
+      - AWS_DEFAULT_REGION=ap-northeast-2
+
+      # === Database (비-시크릿만, 시크릿은 Secrets Manager) ===
+      - DB_POOL_SIZE=${DB_POOL_SIZE:-5}
+      - DB_MAX_OVERFLOW=${DB_MAX_OVERFLOW:-10}
+      # DATABASE_URL, DB_HOST 등 → Secrets Manager에서 자동 주입 (USE_AWS_SECRETS=true)
+
+      # === Redis (3-tier caching) ===
+      - REDIS_HOST=${REDIS_HOST:-redis}
+      - REDIS_PORT=${REDIS_PORT:-6379}
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+      - ENABLE_ANSWER_CACHE=${ENABLE_ANSWER_CACHE:-true}
+
+      # === LLM API Keys ===
+      # OPENAI_API_KEY, ANTHROPIC_API_KEY → Secrets Manager에서 자동 주입 (USE_AWS_SECRETS=true)
+
+      # === MAS Supervisor Settings ===
+      - MODEL_SUPERVISOR=${MODEL_SUPERVISOR:-gpt-4o}
+      - MODEL_DRAFT_AGENT=${MODEL_DRAFT_AGENT:-gpt-4o}
+      - MODEL_REVIEW_AGENT=${MODEL_REVIEW_AGENT:-gpt-4o}
+
+      # === Embedding ===
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL:-text-embedding-3-large}
+      - USE_OPENAI_EMBEDDING=${USE_OPENAI_EMBEDDING:-true}
+
+      # === Agent Tuning ===
+      - SIMILARITY_THRESHOLD=${SIMILARITY_THRESHOLD:-0.55}
+      - MAX_SUPERVISOR_ITERATIONS=${MAX_SUPERVISOR_ITERATIONS:-10}
+
+      # === Logging ===
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+
+      # === Memory Backend ===
+      - CONVERSATION_MEMORY_BACKEND=${CONVERSATION_MEMORY_BACKEND:-db}
+
+      # === Environment ===
+      - ENVIRONMENT=production
+
+      # === OAuth & Auth ===
+      # URL 설정 (프로덕션 도메인)
+      - BACKEND_URL=${BACKEND_URL:-https://ddoksori.duckdns.org}
+      - FRONTEND_URL=${FRONTEND_URL:-https://ddoksori.duckdns.org}
+      - CORS_ORIGINS=${CORS_ORIGINS:-https://ddoksori.duckdns.org}
+      # JWT (Secrets Manager 또는 환경변수)
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+      - JWT_TOKEN_EXPIRE_DAYS=${JWT_TOKEN_EXPIRE_DAYS:-7}
+      # OAuth 2.0 (Secrets Manager 또는 환경변수)
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+      - NAVER_CLIENT_ID=${NAVER_CLIENT_ID}
+      - NAVER_CLIENT_SECRET=${NAVER_CLIENT_SECRET}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - ddoksori-net
+
+  frontend:
+    image: ${ECR_REGISTRY}/ddoksori-frontend:${IMAGE_TAG:-latest}
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+      - /var/www/certbot:/var/www/certbot:ro
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - ddoksori-net
+
+  redis:
+    image: redis:7-alpine
+    restart: always
+    # SEC-40: Redis 인증 추가
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD} --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ddoksori-net
+
+networks:
+  ddoksori-net:
+    driver: bridge
+
+volumes:
+  redis-data:

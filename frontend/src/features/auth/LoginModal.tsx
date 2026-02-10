@@ -1,6 +1,4 @@
 import { useUIStore } from '@/store';
-import { useAuthStore } from '@/features/auth/auth.store';
-import { useChatStore } from '@/features/chat/chat.store';
 
 // Google 로고 SVG
 const GoogleIcon = () => (
@@ -19,24 +17,18 @@ const NaverIcon = () => (
   </svg>
 );
 
-// Kakao 로고 SVG
-const KakaoIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path fillRule="evenodd" clipRule="evenodd" d="M10 0C4.477 0 0 3.51 0 7.837C0 10.45 1.654 12.74 4.175 14.092L3.233 17.788C3.137 18.147 3.548 18.419 3.853 18.208L8.214 15.316C8.805 15.4 9.399 15.673 10 15.673C15.523 15.673 20 12.163 20 7.837C20 3.51 15.523 0 10 0Z" fill="#181600"/>
-  </svg>
-);
-
 export default function LoginModal() {
   const setIsAuthModalOpen = useUIStore((state) => state.setIsAuthModalOpen);
-  const login = useAuthStore((state) => state.login);
-  const loadChatSessions = useChatStore((state) => state.loadChatSessions);
 
-  // OAuth 로그인 성공 시 호출할 함수 예시
-  // const handleLoginSuccess = (user: User, token: string) => {
-  //   login(user, token); // 세션 이전이 자동으로 처리됩니다
-  //   loadChatSessions(true); // 로그인 사용자 세션 로드
-  //   setIsAuthModalOpen(false);
-  // };
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL ?? 'http://localhost:8000';
+
+  const handleGoogleLogin = () => {
+    window.location.href = `${BACKEND_URL}/auth/google`;
+  };
+
+  const handleNaverLogin = () => {
+    window.location.href = `${BACKEND_URL}/auth/naver`;
+  };
 
   return (
     <div
@@ -68,6 +60,7 @@ export default function LoginModal() {
           {/* Google 로그인 */}
           <button
             type="button"
+            onClick={handleGoogleLogin}
             className="w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all flex items-center justify-center gap-3 shadow-sm"
           >
             <GoogleIcon />
@@ -77,19 +70,11 @@ export default function LoginModal() {
           {/* 네이버 로그인 */}
           <button
             type="button"
+            onClick={handleNaverLogin}
             className="w-full rounded-lg bg-[#03C75A] text-white px-4 py-3 text-sm font-semibold hover:bg-[#02B350] transition-all flex items-center justify-center gap-3 shadow-sm"
           >
             <NaverIcon />
             <span>네이버로 계속하기</span>
-          </button>
-
-          {/* 카카오 로그인 */}
-          <button
-            type="button"
-            className="w-full rounded-lg bg-[#FEE500] text-[#000000] px-4 py-3 text-sm font-semibold hover:bg-[#FDD835] transition-all flex items-center justify-center gap-3 shadow-sm"
-          >
-            <KakaoIcon />
-            <span>카카오로 계속하기</span>
           </button>
         </div>
 

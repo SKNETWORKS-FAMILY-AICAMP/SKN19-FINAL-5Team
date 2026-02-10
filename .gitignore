@@ -55,27 +55,42 @@ logs/
 models/
 
 # archives
+_archive
 backend/data/law/scripts/_archive
 backend/_archive
+docs/guides/_archive
+
+
+# documents
+docs/_archive
 
 
 # Data
 backend/data/counsel/
 backend/data/criteria/
 backend/data/dispute/
-backend/data/law/raw
+backend/data/law
+backend/data/evaluation
+backend/data/golden_set
+backend/app/database
 
-
-# Backup Data
-backup.sql
-
+# Test
+frontend/test-results
+frontend/e2e
+frontend/playwright-report
+frontend/vitest.config.ts
+backend/app/agents/retrieval/tools/rds_internal_functions_playground.ipynb
+backend/app/agents/answer_generation/tests
+frontend/.vite
 
 # Agents
-Agents
 .agent
+.claude
+.sisyphus
+.omc
 .cursorrules
 AGENTS.md
 CLAUDE.md
 AI_MEMO.md
-AI_MEMO_S1.md
-docs/sprint/
+backend/backup.sql
+backup.sql

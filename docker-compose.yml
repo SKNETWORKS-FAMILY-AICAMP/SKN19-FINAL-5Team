@@ -1,38 +1,8 @@
-version: '3.8'
-
 services:
-  # PostgreSQL 데이터베이스 with pgvector
-  db:
-    image: pgvector/pgvector:pg16
-    container_name: ddoksori_db
-    environment:
-      POSTGRES_USER: ${DB_USER:-postgres}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
-      POSTGRES_DB: ${DB_NAME:-ddoksori}
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-      - ./backend/database/init.sql:/docker-entrypoint-initdb.d/01_init.sql
-      - ./backend/database/schema_v2_final.sql:/docker-entrypoint-initdb.d/02_schema_v2_final.sql
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+  # NOTE: CloudBeaver removed for security (SEC-41)
+  # Use local DBeaver or pgAdmin for database management instead
 
-  # CloudBeaver (Web-based Database Manager)
-  cloudbeaver:
-    image: dbeaver/cloudbeaver:latest
-    container_name: ddoksori_cloudbeaver
-    ports:
-      - "8978:8978"
-    volumes:
-      - cloudbeaver_data:/opt/cloudbeaver/workspace
-    depends_on:
-      - db
-
-  # FastAPI 백엔드
+  # FastAPI backend
   backend:
     build:
       context: ./backend
@@ -41,18 +11,17 @@ services:
     ports:
       - "8000:8000"
     env_file:
-      - ./backend/.env
+      - ./.env
     environment:
-      - DB_HOST=db
-      - DB_PORT=5432
+      - REDIS_HOST=redis
     depends_on:
-      db:
+      redis:
         condition: service_healthy
     volumes:
       - ./backend:/app
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
-  # React 프론트엔드
+  # React frontend
   frontend:
     build:
       context: ./frontend
@@ -62,11 +31,28 @@ services:
       - "5173:5173"
     volumes:
       - ./frontend:/app
-      - /app/node_modules
+      - frontend_node_modules:/app/node_modules
     environment:
-      - VITE_API_URL=http://localhost:8000
+      - VITE_API_BASE_URL=http://localhost:8000
     command: npm run dev -- --host
 
+  # Redis (Answer Caching) - SEC-40: Added authentication
+  redis:
+    image: redis:7-alpine
+    container_name: ddoksori_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-dev_redis_password_change_in_production}
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-dev_redis_password_change_in_production}
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD:-dev_redis_password_change_in_production}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
 volumes:
-  postgres_data:
-  cloudbeaver_data:
+  redis_data:
+  frontend_node_modules:

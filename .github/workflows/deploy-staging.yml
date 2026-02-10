@@ -1,0 +1,265 @@
+name: Deploy to Staging
+
+on:
+  workflow_run:
+    workflows: ["Build and Push"]
+    types: [completed]
+    branches: [main]
+
+env:
+  AWS_REGION: ap-northeast-2
+  EC2_HOST: 15.165.215.141
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    permissions:
+      id-token: write
+      contents: read
+    env:
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Get ECR Login
+        id: ecr-login
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Deploy to Staging
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ env.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          command_timeout: 5m
+          timeout: 60s
+          script: |
+            set -e  # 에러 시 즉시 종료
+            cd /home/ubuntu/ddoksori
+
+            # .env 파일 로드 (ECR_REGISTRY, USE_AWS_SECRETS 등)
+            if [ -f .env ]; then
+              echo "Loading .env file..."
+              set -a
+              source .env
+              set +a
+            fi
+
+            # ECR_REGISTRY 검증
+            if [ -z "$ECR_REGISTRY" ]; then
+              echo "ERROR: ECR_REGISTRY is not set!"
+              echo "Please create /home/ubuntu/ddoksori/.env with ECR_REGISTRY"
+              exit 1
+            fi
+            echo "ECR_REGISTRY: $ECR_REGISTRY"
+
+            # === AWS Secrets Manager에서 환경변수 가져오기 ===
+            echo "Fetching secrets from AWS Secrets Manager..."
+
+            # infra secrets (REDIS_PASSWORD)
+            INFRA_SECRET=$(aws secretsmanager get-secret-value \
+              --secret-id "ddoksori/${SECRETS_ENV:-staging}/infra" \
+              --region ap-northeast-2 \
+              --query 'SecretString' \
+              --output text 2>/dev/null || echo '{}')
+
+            # app secrets (JWT, OAuth)
+            APP_SECRET=$(aws secretsmanager get-secret-value \
+              --secret-id "ddoksori/${SECRETS_ENV:-staging}/app" \
+              --region ap-northeast-2 \
+              --query 'SecretString' \
+              --output text 2>/dev/null || echo '{}')
+
+            # [SEC-FIX] jq로 JSON 파싱 (shell injection 방지)
+            # jq가 없으면 설치
+            if ! command -v jq &> /dev/null; then
+              echo "Installing jq..."
+              sudo apt-get update -qq && sudo apt-get install -y -qq jq
+            fi
+
+            # REDIS_PASSWORD (from infra or .env)
+            if [ -z "$REDIS_PASSWORD" ]; then
+              REDIS_PASSWORD=$(echo "$INFRA_SECRET" | jq -r '.REDIS_PASSWORD // ""' 2>/dev/null)
+              if [ -z "$REDIS_PASSWORD" ]; then
+                echo "ERROR: REDIS_PASSWORD not found in Secrets Manager (ddoksori/staging/infra)"
+                exit 1
+              fi
+              export REDIS_PASSWORD
+              echo "REDIS_PASSWORD loaded from Secrets Manager"
+            else
+              echo "REDIS_PASSWORD already set from .env"
+            fi
+
+            # JWT_SECRET_KEY (필수 - SEC-01)
+            if [ -z "$JWT_SECRET_KEY" ]; then
+              JWT_SECRET_KEY=$(echo "$APP_SECRET" | jq -r '.JWT_SECRET_KEY // ""' 2>/dev/null)
+              if [ -z "$JWT_SECRET_KEY" ]; then
+                echo "ERROR: JWT_SECRET_KEY not found in Secrets Manager (ddoksori/staging/app)"
+                exit 1
+              fi
+              export JWT_SECRET_KEY
+              echo "JWT_SECRET_KEY loaded from Secrets Manager"
+            else
+              echo "JWT_SECRET_KEY already set from .env"
+            fi
+
+            # OAuth secrets (optional - 경고만)
+            # [SEC-FIX] jq --arg로 변수 전달하여 shell injection 방지
+            for VAR in GOOGLE_CLIENT_ID GOOGLE_CLIENT_SECRET NAVER_CLIENT_ID NAVER_CLIENT_SECRET; do
+              if [ -z "$(eval echo \$$VAR)" ]; then
+                VALUE=$(echo "$APP_SECRET" | jq -r --arg key "$VAR" '.[$key] // ""' 2>/dev/null)
+                if [ -n "$VALUE" ]; then
+                  export "$VAR=$VALUE"
+                  echo "$VAR loaded from Secrets Manager"
+                else
+                  echo "WARNING: $VAR not found (OAuth login may not work)"
+                fi
+              else
+                echo "$VAR already set from .env"
+              fi
+            done
+
+            # ECR 로그인
+            echo "Logging into ECR..."
+            aws ecr get-login-password --region ap-northeast-2 | \
+              docker login --username AWS --password-stdin $ECR_REGISTRY
+
+            # 설정 파일 동기화 (GitHub에서 최신 버전 다운로드)
+            echo "Syncing docker-compose.prod.yml from GitHub..."
+            curl -sf -o docker-compose.prod.yml.new \
+              https://raw.githubusercontent.com/SKN19-FINAL-5team/LLM/main/docker-compose.prod.yml
+            if [ -f docker-compose.prod.yml.new ]; then
+              mv docker-compose.prod.yml.new docker-compose.prod.yml
+              echo "docker-compose.prod.yml updated successfully"
+            else
+              echo "WARNING: Failed to download docker-compose.prod.yml, using existing file"
+            fi
+
+            # 이미지 Pull
+            echo "Pulling latest images..."
+            docker compose -f docker-compose.prod.yml pull || {
+              echo "ERROR: Failed to pull images"
+              exit 1
+            }
+
+            # 배포 (zero-downtime)
+            echo "Deploying containers..."
+            docker compose -f docker-compose.prod.yml up -d --remove-orphans
+
+            # 오래된 이미지 정리
+            docker image prune -f
+
+            # 상태 확인
+            echo "=== Container Status ==="
+            docker compose -f docker-compose.prod.yml ps
+
+            # === Smoke Test (docker exec로 컨테이너 내부에서 테스트) ===
+            echo "Waiting 30s for services to start..."
+            sleep 30
+
+            echo "=== Running Smoke Tests ==="
+            BACKEND_CONTAINER=$(docker compose -f docker-compose.prod.yml ps -q backend)
+
+            # 1. Health Check (필수 - DB 연결 확인)
+            echo "Testing /health..."
+            HEALTH=$(docker exec $BACKEND_CONTAINER curl -sf http://localhost:8000/health || echo '{"status":"error"}')
+            if ! echo "$HEALTH" | grep -q '"status":"healthy"'; then
+              echo "FAILED: /health"
+              echo "Response: $HEALTH"
+              echo "=== Backend Logs ==="
+              docker compose -f docker-compose.prod.yml logs --tail 50 backend
+              exit 1
+            fi
+            echo "OK: /health - DB connected"
+
+            # 2. LLM Check (경고만 - 외부 서비스)
+            echo "Testing /health/llm/supervisor..."
+            LLM=$(docker exec $BACKEND_CONTAINER curl -sf http://localhost:8000/health/llm/supervisor || echo '{"status":"error"}')
+            if echo "$LLM" | grep -q '"status":"healthy"'; then
+              echo "OK: /health/llm/supervisor"
+            else
+              echo "WARNING: /health/llm/supervisor unhealthy (non-blocking)"
+            fi
+
+            # 3. Embedding Check (경고만 - 외부 서비스)
+            echo "Testing /health/embedding..."
+            EMBED=$(docker exec $BACKEND_CONTAINER curl -sf http://localhost:8000/health/embedding || echo '{"status":"error"}')
+            if echo "$EMBED" | grep -q '"status":"healthy"'; then
+              echo "OK: /health/embedding"
+            else
+              echo "WARNING: /health/embedding unhealthy (non-blocking)"
+            fi
+
+            # 4. Root endpoint (필수 - API 서버 응답)
+            echo "Testing /..."
+            ROOT=$(docker exec $BACKEND_CONTAINER curl -sf http://localhost:8000/ || echo '')
+            if [ -z "$ROOT" ]; then
+              echo "FAILED: / endpoint returned empty"
+              exit 1
+            fi
+            echo "OK: / endpoint"
+
+
+            # 5. OAuth Configuration Check (경고 - OAuth 로그인 검증)
+            echo "Checking OAuth configuration..."
+            OAUTH_OK=true
+            for VAR in GOOGLE_CLIENT_ID NAVER_CLIENT_ID; do
+              VAL=$(docker exec $BACKEND_CONTAINER printenv $VAR 2>/dev/null || echo "")
+              if [ -z "$VAL" ] || [ "$VAL" = "None" ] || [ "$VAL" = "null" ]; then
+                echo "WARNING: $VAR is empty or invalid ('$VAL') - OAuth login will not work"
+                OAUTH_OK=false
+              fi
+            done
+            if [ "$OAUTH_OK" = "true" ]; then
+              echo "OK: OAuth client_id configured"
+            fi
+            echo "=== Smoke Tests Completed ==="
+
+      - name: External Health Check
+        run: |
+          echo "Verifying external access to http://${{ env.EC2_HOST }}/health..."
+          for i in {1..5}; do
+            if curl -sf http://${{ env.EC2_HOST }}/health; then
+              echo "External health check passed!"
+              exit 0
+            fi
+            echo "Attempt $i failed, retrying in 10s..."
+            sleep 10
+          done
+          echo "ERROR: External health check failed after 5 attempts"
+          exit 1
+
+      - name: Discord Notification - Success
+        if: success() && env.DISCORD_WEBHOOK != ''
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          status: success
+          title: "Staging Deployment"
+          description: |
+            **Status**: Success
+            **Commit**: `${{ github.event.workflow_run.head_sha }}`
+            **Branch**: main
+            **URL**: http://${{ env.EC2_HOST }}
+
+      - name: Discord Notification - Failure
+        if: failure() && env.DISCORD_WEBHOOK != ''
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          status: failure
+          title: "Staging Deployment"
+          description: |
+            **Status**: Failed
+            **Commit**: `${{ github.event.workflow_run.head_sha }}`
+            **Branch**: main
+
+            Check GitHub Actions for details.

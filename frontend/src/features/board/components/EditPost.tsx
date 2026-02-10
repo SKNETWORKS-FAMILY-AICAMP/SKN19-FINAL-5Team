@@ -1,35 +1,41 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 import { ArrowLeft, Save } from 'lucide-react';
-import { CATEGORY_LABELS, DISPLAY_TO_CATEGORY_MAP, POST_CATEGORIES } from '@/shared/config/categories';
 import type { BoardPost, BoardPostForm } from '../board.types';
 
 interface EditPostProps {
   post: BoardPost;
+  content: string;
   onBack: () => void;
-  onSubmit: (postId: number, data: BoardPostForm) => void;
+  onSubmit: (postId: string, data: BoardPostForm) => void;
 }
 
 type EditPostFormState = {
   category: BoardPostForm['category'];
+  subCategory: string;
   title: string;
   content: string;
 };
 
-export default function EditPost({ post, onBack, onSubmit }: EditPostProps) {
-  const getCategoryIdFromDisplayName = (displayName) => {
-    const categoryMap = {
-      '분쟁해결사례/공유': 'case-sharing',
-      '무엇이든/물어보세요': 'qna',
-      '소비자/꿀팁/노하우': 'tips'
-    };
-    return categoryMap[displayName] || 'case-sharing';
+export default function EditPost({ post, content, onBack, onSubmit }: EditPostProps) {
+  // category_key에서 카테고리 ID 추출
+  const getCategoryIdFromKey = (categoryKey: string) => {
+    const validCategories = ['case-sharing', 'qna', 'tips'];
+    return validCategories.includes(categoryKey) ? categoryKey : 'case-sharing';
   };
 
-  const [formData, setFormData] = useState({
-    category: getCategoryIdFromDisplayName(post.category),
+  // sub_category에서 서브 카테고리 ID 추출
+  const getSubCategoryFromValue = (subCategory: string | null | undefined) => {
+    if (!subCategory) return '';
+    const validSubCategories = ['pre-mediation', 'mediation'];
+    return validSubCategories.includes(subCategory) ? subCategory : '';
+  };
+
+  const [formData, setFormData] = useState<EditPostFormState>({
+    category: getCategoryIdFromKey(post.category_key) as BoardPostForm['category'],
+    subCategory: getSubCategoryFromValue(post.sub_category),
     title: post.title,
-    content: post.preview // 실제로는 전체 내용이 들어가야 함
+    content: content
   });
 
   const categories = [
@@ -38,13 +44,38 @@ export default function EditPost({ post, onBack, onSubmit }: EditPostProps) {
     { id: 'tips', name: '소비자 꿀팁/노하우' }
   ];
 
+  const subCategories = [
+    { id: 'pre-mediation', name: '조정 이전 단계에서 해결' },
+    { id: 'mediation', name: '조정을 통한 해결' }
+  ];
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!formData.category || !formData.title.trim() || !formData.content.trim()) {
       alert('모든 필드를 입력해주세요.');
       return;
     }
-    onSubmit(post.id, formData);
+
+    // 분쟁해결사례 공유 카테고리인 경우 서브 카테고리 필수
+    if (formData.category === 'case-sharing' && !formData.subCategory) {
+      alert('분쟁해결사례 공유의 세부 카테고리를 선택해주세요.');
+      return;
+    }
+
+    onSubmit(post.id, {
+      category: formData.category,
+      subCategory: formData.subCategory || undefined,
+      title: formData.title,
+      content: formData.content,
+    });
+  };
+
+  const handleCategoryChange = (categoryId: string) => {
+    setFormData({
+      ...formData,
+      category: categoryId as BoardPostForm['category'],
+      subCategory: '' // 카테고리 변경 시 서브 카테고리 초기화
+    });
   };
 
   return (
@@ -75,15 +106,55 @@ export default function EditPost({ post, onBack, onSubmit }: EditPostProps) {
                 className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
                   formData.category === cat.id
                     ? 'bg-deep-teal text-white'
-                    : 'bg-white border-2 border-gray-200 text-gray-700 hover:border-lavender'
+                    : 'bg-white border-2 border-gray-200 text-gray-700 hover:border-deep-teal'
                 }`}
-                onClick={() => setFormData({ ...formData, category: cat.id })}
+                onClick={() => handleCategoryChange(cat.id)}
               >
                 {cat.name}
               </button>
             ))}
           </div>
         </div>
+
+        {/* Sub-Category Selection (분쟁해결사례 공유 선택 시) */}
+        {formData.category === 'case-sharing' && (
+          <div className="mb-6">
+            <label className="block text-sm font-semibold text-gray-700 mb-3">
+              세부 카테고리 <span className="text-red-500">*</span>
+            </label>
+            <div className="flex flex-wrap gap-3">
+              {subCategories.map(subCat => (
+                <button
+                  key={subCat.id}
+                  type="button"
+                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
+                    formData.subCategory === subCat.id
+                      ? 'text-white'
+                      : 'bg-white border-2 border-gray-200 text-gray-700'
+                  }`}
+                  style={
+                    formData.subCategory === subCat.id
+                      ? { backgroundColor: '#2b2d42' }
+                      : {}
+                  }
+                  onMouseEnter={(e) => {
+                    if (formData.subCategory !== subCat.id) {
+                      e.currentTarget.style.borderColor = '#2b2d42';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (formData.subCategory !== subCat.id) {
+                      e.currentTarget.style.borderColor = '';
+                    }
+                  }}
+                  onClick={() => setFormData({ ...formData, subCategory: subCat.id })}
+                >
+                  {subCat.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Title Input */}
         <div className="mb-6">

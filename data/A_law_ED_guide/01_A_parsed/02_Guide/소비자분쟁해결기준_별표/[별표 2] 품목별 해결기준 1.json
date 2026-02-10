@@ -1,0 +1,5511 @@
+{
+  "document_title": "소비자분쟁해결기준 별표2 품목별 해결기준",
+  "data": [
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "1. 농ㆍ수ㆍ축산물(7개 업종)",
+      "소분류": "①란류, ②육류, ③곡류, ④과일, ⑤야채류, ⑥수산물류",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "함량, 용량, 중량, 개수 부족 및 표시내용 상위",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "부패, 변질",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "3",
+          "dispute_type": "유통기간 경과",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "4",
+          "dispute_type": "이물혼입",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "5",
+          "dispute_type": "부작용",
+          "resolution": "치료비, 경비 및 일실소득 배상",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "6",
+          "dispute_type": "용기파손 등으로 인한 상해사고",
+          "resolution": "치료비, 경비 및 일실소득 배상",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 1
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "1. 농ㆍ수ㆍ축산물(7개 업종)",
+      "소분류": "⑦종묘 등",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "파종 전 불량 확인",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [
+            {
+              "condition": "용량미달",
+              "resolution": "제품교환 또는 구입가 환급",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "이물혼입, 부패, 변질",
+              "resolution": "제품교환 또는 구입가 환급",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "포장재 파손, 유효기간 경과",
+              "resolution": "제품교환 또는 구입가 환급",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": [
+            {
+              "keyword": "발아 불량",
+              "content": "* 발아 불량은 종자 포장에 표시된 발아율 이하로서 정상 발아기간 경과 후 15일 이내에 이의를 제기한 경우에 한함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "dispute_type": "파종 후 종자불량에 의한 발아불량 및 타품종 혼입",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "재파종 가능 시",
+              "resolution": "대파종자 교환 및 직접경비 배상",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "keyword": "직접경비",
+                  "content": "* 직접경비 : 인건비, 자재비 등",
+                  "matched_by": "keyword"
+                }
+              ]
+            },
+            {
+              "condition": "재파종 불가능 시",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "타품종으로 재파종이 가능한 경우",
+                  "resolution": "예상수익과 실수익과의 차액 배상",
+                  "notes": []
+                },
+                {
+                  "condition": "타품종으로 재파종이 불가능한 경우",
+                  "resolution": "예상수익액 배상",
+                  "notes": []
+                }
+              ],
+              "notes": [
+                {
+                  "keyword": "예상수익",
+                  "content": "* 예상수익은 당초 재배품목의 최근 3년간 평균수확량에 해당연도 농가수취가격을 곱한 금액으로 산출함.",
+                  "matched_by": "keyword"
+                }
+              ]
+            }
+          ],
+          "notes": [
+            {
+              "keyword": "발아 불량",
+              "content": "* 발아 불량은 종자 포장에 표시된 발아율 이하로서 정상 발아기간 경과 후 15일 이내에 이의를 제기한 경우에 한함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "dispute_type": "생육장애 및 불량과 발생(재배기간 중 또는 재배결과)",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "종자 하자일 경우",
+              "resolution": "예상수익과 실수익과의 차액 배상",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "keyword": "예상수익",
+                  "content": "* 예상수익은 당초 재배품목의 최근 3년간 평균수확량에 해당연도 농가수취가격을 곱한 금액으로 산출함.",
+                  "matched_by": "keyword"
+                }
+              ]
+            },
+            {
+              "condition": "기상여건 불량, 재배기술 미흡, 종자하자 등 복합요인이 있을 경우",
+              "resolution": "종자하자에 의한 기여도 (배분율)에 따라 예상수익과 실수익과의 차액 배상",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "keyword": "예상수익",
+                  "content": "* 예상수익은 당초 재배품목의 최근 3년간 평균수확량에 해당연도 농가수취가격을 곱한 금액으로 산출함.",
+                  "matched_by": "keyword"
+                }
+              ]
+            }
+          ],
+          "notes": [
+            {
+              "keyword": "실제 생육상태",
+              "content": "* 실제 생육상태와 광고내용이 다른 경우를 포함함",
+              "matched_by": "keyword"
+            }
+          ]
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "「종자산업법」 제23조, 시행령 제8조 별표4 [농림축산식품부]",
+        "기타법령": "종자피해판정 및 피해보상기준(별표1, 국립종자원 고시 제2014-1호) [농림축산식품부]"
+      },
+      "source_page": 1
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "2. 식료품(19개 업종)",
+      "소분류": "청량음료, 과자류, 빙과류, 낙농제품류, 통조림류, 제빵류, 설탕ㆍ제분류, 식용유류, 고기가공식품류, 조미료, 장류, 다류, 면류, 자양식품, 주류, 도시락, 찬류, 냉동식품류, 먹는샘물",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "함량, 용량부족",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "일실소득",
+              "content": "* 일실소득 : 피해로 인하여 소득상실이 발생한 것이 입증된 때에 한하며, 금액을 입증할 수 없는 경우에는 시중 노임단가를 기준으로 함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "dispute_type": "부패, 변질",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "일실소득",
+              "content": "* 일실소득 : 피해로 인하여 소득상실이 발생한 것이 입증된 때에 한하며, 금액을 입증할 수 없는 경우에는 시중 노임단가를 기준으로 함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "dispute_type": "소비기한 경과",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "일실소득",
+              "content": "* 일실소득 : 피해로 인하여 소득상실이 발생한 것이 입증된 때에 한하며, 금액을 입증할 수 없는 경우에는 시중 노임단가를 기준으로 함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "dispute_type": "이물혼입",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "일실소득",
+              "content": "* 일실소득 : 피해로 인하여 소득상실이 발생한 것이 입증된 때에 한하며, 금액을 입증할 수 없는 경우에는 시중 노임단가를 기준으로 함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "dispute_type": "부작용",
+          "resolution": "치료비, 경비 및 일실소득 배상",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "일실소득",
+              "content": "* 일실소득 : 피해로 인하여 소득상실이 발생한 것이 입증된 때에 한하며, 금액을 입증할 수 없는 경우에는 시중 노임단가를 기준으로 함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "dispute_type": "용기파손 등으로 인한 상해 사고",
+          "resolution": "치료비, 경비 및 일실소득 배상",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "일실소득",
+              "content": "* 일실소득 : 피해로 인하여 소득상실이 발생한 것이 입증된 때에 한하며, 금액을 입증할 수 없는 경우에는 시중 노임단가를 기준으로 함.",
+              "matched_by": "keyword"
+            }
+          ]
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "「식품 등의 표시광고에 관한 법률」 제23조, 시행령 제8조",
+        "기타법령": "[식품의약안전처]"
+      },
+      "source_page": 2
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "3. 동물사료",
+      "소분류": "동물사료",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "중량부족",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "수의사 진단",
+              "content": "* 수의사의 진단에 의해 사료와의 인과관계가 확인되는 경우에 적용함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "dispute_type": "부패, 변질",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "수의사 진단",
+              "content": "* 수의사의 진단에 의해 사료와의 인과관계가 확인되는 경우에 적용함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "dispute_type": "성분이상",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "수의사 진단",
+              "content": "* 수의사의 진단에 의해 사료와의 인과관계가 확인되는 경우에 적용함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "dispute_type": "유효기간 경과",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "수의사 진단",
+              "content": "* 수의사의 진단에 의해 사료와의 인과관계가 확인되는 경우에 적용함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "dispute_type": "부작용",
+          "resolution": "사료의 구입가 및 동물의 치료경비 배상",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "수의사 진단",
+              "content": "* 수의사의 진단에 의해 사료와의 인과관계가 확인되는 경우에 적용함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "dispute_type": "동물폐사",
+          "resolution": "사료 구입가 및 동물의 가격 배상",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "수의사 진단",
+              "content": "* 수의사의 진단에 의해 사료와의 인과관계가 확인되는 경우에 적용함.",
+              "matched_by": "keyword"
+            }
+          ]
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 2
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "4. 문화용품류(4개 업종)",
+      "소분류": "①귀금속ㆍ보석",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "함량 및 중량미달",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "치수 상이",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "구입 후 1개월 이내",
+              "resolution": "무상수리 또는 제품교환",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "3",
+          "dispute_type": "도금 또는 입힘상태 불량",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "구입 후 1년 이내",
+              "resolution": "무상수리 또는 제품교환",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "4",
+          "dispute_type": "표시와 제품의 내용이 상이(등급, 색상, 크기, 천연 또는 합성품 등)",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "5",
+          "dispute_type": "조립불량",
+          "resolution": "무상수리 또는 제품교환",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 3
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "4. 문화용품류(4개 업종)",
+      "소분류": "②악세사리",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "디자인, 색상, 크기에 불만이 있는 경우",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "구입 후 7일 이내로서 제품에 손상이 없는 경우",
+              "resolution": "제품교환",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "조립 불량",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "부착물의 이탈, 끈, 고리 등의 절단",
+              "resolution": "무상수리 또는 제품교환",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "3",
+          "dispute_type": "도금 또는 입힘상태 불량",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "구입일로부터 6개월 이내",
+              "resolution": "무상수리 또는 제품교환",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 3
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "4. 문화용품류(4개 업종)",
+      "소분류": "③ 도서ㆍ음반 (2-1)",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "품질하자(파손, 페이지수 부족, 녹음·녹화상태 불량)",
+          "resolution": "교환",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "기수수 상품",
+              "content": "기수수 상품(용역)의 동시 반환",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "dispute_type": "계약서 미교부 등(법령상 계약서 교부의무가 부여되어 있는 거래의 경우)",
+          "resolution": "계약해제",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "상품 반환비용",
+              "content": "상품 반환비용 사업자 부담",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "dispute_type": "구입자 철회권 행사기간 이내에 서면계약해제요구에 대한 부당한 위약금 요구",
+          "resolution": "위약금 없이 계약해제",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "4",
+          "dispute_type": "판매자가 구입자의 철회권 행사를 제한하기 위해 임의로 포장을 훼손한 경우",
+          "resolution": "계약해제",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "손료산정",
+              "content": "계약해제 시 이행 부분만을 기준으로 손료산정 공제한 후 환급함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "dispute_type": "판매원 신분 허위, 판매처 허위인 계약",
+          "resolution": "계약해제",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "6",
+          "dispute_type": "회원제 판매 또는 복합상품 판매 후 일부 계약 불이행",
+          "resolution": "계약해제",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "7",
+          "dispute_type": "정기간행물 구독계약을 중도해지한 경우 (서면 계약해지의사 도달일 기준)",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "사업자 사정으로 인한 경우",
+              "resolution": "미경과 계약기간의 구독료 환급과 동 구독료 10% 금액 배상",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "keyword": "구독료",
+                  "content": "구독료는 실거래 구독료를 기준으로 함.",
+                  "matched_by": "keyword"
+                }
+              ]
+            },
+            {
+              "condition": "소비자 사정으로 인한 경우",
+              "resolution": "미경과 계약기간의 구독료에서 동 구독료의 10% 금액 공제 후 환급",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "keyword": "사은품",
+                  "content": "단, 사은품의 단순 포장 개봉은 훼손 또는 사용으로 보지 아니함.",
+                  "matched_by": "keyword"
+                }
+              ]
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "8",
+          "dispute_type": "도서, 음반, 정기간행물 계약의 중도해지 시 제공받은 사은품",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "해지에 대한 책임이 소비자에게 있는 경우",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "제품에 손상이 없는 경우",
+                  "resolution": "반환",
+                  "notes": []
+                },
+                {
+                  "condition": "제품이 훼손된 경우",
+                  "resolution": "해당 사은품과 동종의 상품으로 반환하거나 동종 상품의 시중가격 또는 계약서상에 기재된 해당 사은품의 가격에서 계약 유지 기간만큼 정액 감가상각하고 나머지 금액을 배상",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            },
+            {
+              "condition": "해지에 대한 책임이 사업자에게 있는 경우",
+              "resolution": "반환의무 면제",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "9",
+          "dispute_type": "청약철회기간 이후 계약 해제 시 (법령상 청약철회가 가능한 거래의 경우)",
+          "resolution": "통상사용료 또는 사용손해율에 의한 손실공제 후 계약해제",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 4
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "4. 문화용품류(4개 업종)",
+      "소분류": "③ 도서ㆍ음반 (2-2)",
+      "items": [],
+      "notes": [
+        {
+          "note_title": "※ 통상사용률 및 사용손해율",
+          "content": [
+            "- 통상사용률과 사용손해율을 비교하여 높은 쪽의 손율을 택함.",
+            "- 사용손해율은 원칙적으로 도서류나 음반류의 낱개 각각에 대한 상태를 기준으로 함. 단, 낱개로 분리하기 곤란한 경우에는 분리불가능한 단위를 기준으로 함."
+          ],
+          "sub_notes": []
+        },
+        {
+          "note_title": "□ 도서류",
+          "sub_notes": [
+            {
+              "condition": "가. 통상사용률(통상사용료의 비율)",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "사용기간: 1개월 미만",
+                  "resolution": "통상사용률(%): 20",
+                  "notes": []
+                },
+                {
+                  "condition": "사용기간: 1개월 이상~2개월 미만",
+                  "resolution": "통상사용률(%): 23",
+                  "notes": []
+                },
+                {
+                  "condition": "사용기간: 2개월 이상~3개월 미만",
+                  "resolution": "통상사용률(%): 27",
+                  "notes": []
+                },
+                {
+                  "condition": "사용기간: 3개월 이상~4개월 미만",
+                  "resolution": "통상사용률(%): 30",
+                  "notes": []
+                },
+                {
+                  "condition": "사용기간: 4개월 이상~5개월 미만",
+                  "resolution": "통상사용률(%): 40",
+                  "notes": []
+                },
+                {
+                  "condition": "사용기간: 5개월 이상~6개월 미만",
+                  "resolution": "통상사용률(%): 50",
+                  "notes": []
+                },
+                {
+                  "condition": "사용기간: 6개월 이상~7개월 미만",
+                  "resolution": "통상사용률(%): 60",
+                  "notes": []
+                },
+                {
+                  "condition": "사용기간: 7개월 이상~8개월 미만",
+                  "resolution": "통상사용률(%): 70",
+                  "notes": []
+                },
+                {
+                  "condition": "사용기간: 8개월 이상~9개월 미만",
+                  "resolution": "통상사용률(%): 80",
+                  "notes": []
+                },
+                {
+                  "condition": "사용기간: 9개월 이상~10개월 미만",
+                  "resolution": "통상사용률(%): 90",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            },
+            {
+              "condition": "나. 사용손해율(상품반환시의 손해금 비율)",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "제품상태: 반환상태가 양호한 경우",
+                  "resolution": "손율(%): 20",
+                  "notes": []
+                },
+                {
+                  "condition": "제품상태: 반환상태가 다소 불량한 경우(도서에 다소간의 오파손이 있어 책으로의 재판매가 곤란한 경우)",
+                  "resolution": "손율(%): 50",
+                  "notes": []
+                },
+                {
+                  "condition": "제품상태: 반환상태가 몹시 불량한 경우(도서에 오파손이 심하거나 가필날인 등이 있어 상품의 가치를 상실한 경우)",
+                  "resolution": "손율(%): 85",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            }
+          ]
+        },
+        {
+          "note_title": "□ 음반류",
+          "content": [
+            "- 낱개로 밀봉된 음반, 비디오물 및 소프트웨어에 적용하며, 개봉된 음반류는 복사한 것으로 간주하여 개봉된 수량에 대한 가격을 산정. 단, 음반류의 품질에 하자가 있는 경우에는 개봉한 경우라 하더라도 손료를 적용하지 아니함."
+          ],
+          "sub_notes": []
+        },
+        {
+          "note_title": "□ 도서류 또는 음반류가 다른 상품과 복합 상품으로 판매된 경우",
+          "content": [
+            "- 개별상품의 통상사용률과 사용손해율을 적용함."
+          ],
+          "sub_notes": []
+        }
+      ],
+      "reference": {
+        "근거법령": "",
+        "기타법령": "「계속거래 등의 해지·해제에 따른 위약금 및 대금의 환급에 관한 산정기준(고시)」(방문판매법)\n업종: 학습지업 | 위약금 기준: 계약 해지·해제 시점 이후에 제공하기로 되어 있는 재화등 단위대금의 10%\n학습지 표준약관(제10037호, '02.09.26. 제정)"
+      },
+      "source_page": 5
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "4. 문화용품류(4개 업종)",
+      "소분류": "④ 스포츠ㆍ레저용품",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "구입 후 1개월 이내에 정상적인 사용상태에서 발생한 성능ㆍ기능상의 하자로 중요한 수리를 요할 때",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "품질보증기간 이내에 정상적인 사용상태에서 발생한 성능ㆍ기능상의 하자",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "하자 발생 시",
+                  "resolution": "무상수리",
+                  "notes": []
+                },
+                {
+                  "condition": "수리 불가능 시¹⁾",
+                  "resolution": "제품교환 또는 구입가 환급",
+                  "notes": [
+                    {
+                      "keyword": "수리 불가능",
+                      "content": "1)품질보증기간 이내에 동일 하자에 대해 2회까지 수리 하였으나 하자가 재발하는 경우 또는 여러부위 하자에 대해 4회까지 수리하였으나 하자가 재발하는 경우는 수리 불가능한 것으로 봄.",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                },
+                {
+                  "condition": "교환 불가능 시",
+                  "resolution": "구입가 환급",
+                  "notes": []
+                },
+                {
+                  "condition": "교환된 제품이 1개월 이내에 중요한 수리를 요할 때",
+                  "resolution": "구입가 환급",
+                  "notes": []
+                }
+              ],
+              "notes": [
+                {
+                  "note_title": "* 골프용품의 경우 제품교환의 기준이 되는 기간은 다음과 같음.",
+                  "content": [],
+                  "sub_notes": [
+                    {
+                      "condition": "골프채",
+                      "resolution": "구입 후 3개월 이내",
+                      "sub_conditions": [],
+                      "notes": []
+                    },
+                    {
+                      "condition": "기타 골프용품(장갑, 구두)",
+                      "resolution": "구입 후 6개월 이내",
+                      "sub_conditions": [],
+                      "notes": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "수리 불가능 시¹⁾",
+                  "resolution": "정액 감가상각한 금액에 10%를 가산하여 환급²⁾",
+                  "notes": [
+                    {
+                      "keyword": "품질보증기간",
+                      "content": "소비자 품질보증기간 이내에 수리 등을 요청하였으나 사업자측 사정에 의한 지연 등으로 품질보증기간을 경과하여 완료된 경우, 품질보증기간이 경과되었는지 여부는 수리 등이 사업자측에 접수된 날을 기준으로 판단함",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "3",
+          "dispute_type": "사용자가 수리 의뢰한 제품을 사업자가 분실했을 경우",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "제품교환 또는 구입가 환급",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "keyword": "품질보증기간",
+                  "content": "소비자 품질보증기간 이내에 수리 등을 요청하였으나 사업자측 사정에 의한 지연 등으로 품질보증기간을 경과하여 완료된 경우, 품질보증기간이 경과되었는지 여부는 수리 등이 사업자측에 접수된 날을 기준으로 판단함",
+                  "matched_by": "keyword"
+                }
+              ]
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "정액 감가상각한 금액에 10%를 가산하여 환급(한도 : 구입가격)",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "keyword": "품질보증기간",
+                  "content": "소비자 품질보증기간 이내에 수리 등을 요청하였으나 사업자측 사정에 의한 지연 등으로 품질보증기간을 경과하여 완료된 경우, 품질보증기간이 경과되었는지 여부는 수리 등이 사업자측에 접수된 날을 기준으로 판단함",
+                  "matched_by": "keyword"
+                }
+              ]
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "4",
+          "dispute_type": "부품보유기간 이내에 수리용 부품을 보유하고 있지 않아 발생한 피해",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "정상적인 상태에서 자연 발생한 품질, 성능ㆍ기능상의 하자로 인해 발생된 경우",
+                  "resolution": "제품교환 또는 구입가 환급",
+                  "notes": []
+                },
+                {
+                  "condition": "소비자의 고의ㆍ과실로 인한 고장인 경우",
+                  "resolution": "유상수리에 해당하는 금액징수 후 제품교환",
+                  "notes": []
+                }
+              ],
+              "notes": [
+                {
+                  "keyword": "부품보유기간",
+                  "content": "다만, 부품보유기간(내용 년수)에 한정하여 적용",
+                  "matched_by": "keyword"
+                },
+                {
+                  "keyword": "감가상각방법",
+                  "content": "감가상각방법 : 정액법, 내용 연수는 별표Ⅳ 품목별 내용연수표(월할계산) 적용",
+                  "matched_by": "keyword"
+                },
+                {
+                  "keyword": "감가상각비 계산",
+                  "content": "감가상각비 계산 : (사용연수/내용연수)×구입가",
+                  "matched_by": "keyword"
+                },
+                {
+                  "keyword": "감가상각 잔여금 계산",
+                  "content": "감가상각 잔여금 계산 : 구입가-감가상각비",
+                  "matched_by": "keyword"
+                }
+              ]
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "정액 감가상각한 잔여금액에 구입가의 10%를 가산하여 환급",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "keyword": "감가상각방법",
+                  "content": "감가상각방법 : 정액법, 내용 연수는 별표Ⅳ 품목별 내용연수표(월할계산) 적용",
+                  "matched_by": "keyword"
+                },
+                {
+                  "keyword": "감가상각비 계산",
+                  "content": "감가상각비 계산 : (사용연수/내용연수)×구입가",
+                  "matched_by": "keyword"
+                },
+                {
+                  "keyword": "감가상각 잔여금 계산",
+                  "content": "감가상각 잔여금 계산 : 구입가-감가상각비",
+                  "matched_by": "keyword"
+                }
+              ]
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 6
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "① 전자제품, 사무용기기 (2 - 1)",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "구입 후 10일 이내에 정상적인 사용 상태에서 발생한 성능ㆍ기능상의 하자로 중요한 수리를 요할 때",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "감가상각방법",
+              "content": "* 감가상각방법 : 정액법, 내용연수는 별표Ⅳ 품목별 내용연수표(월할계산) 적용",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "dispute_type": "구입 후 1개월 이내에 정상적인 사용 상태에서 발생한 성능ㆍ기능상의 하자로 중요한 수리를 요할 때",
+          "resolution": "제품교환 또는 무상수리",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "감가상각비",
+              "content": "ㆍ감가상각비 계산 : (사용연수/내용연수)×구입가",
+              "matched_by": "keyword"
+            },
+            {
+              "keyword": "감가상각 잔여금",
+              "content": "ㆍ감가상각 잔여금 계산 : 구입가-감가상각비",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "dispute_type": "품질보증기간 이내에 정상적인 사용 상태에서 발생한 성능ㆍ기능상의 하자",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "하자발생 시",
+                  "resolution": "무상수리",
+                  "notes": []
+                },
+                {
+                  "condition": "수리불가능 시¹⁾",
+                  "resolution": "제품교환 또는 구입가 환급",
+                  "notes": [
+                    {
+                      "keyword": "수리 불가능",
+                      "content": "* 1)품질보증기간 이내에 동일하자에 대해 2회까지 수리하였으나 하자가 재발하는 경우 또는 여러 부위 하자에 대해 4회까지 수리하였으나 하자가 재발하는 경우는 수리 불가능한 것으로 봄.",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                },
+                {
+                  "condition": "교환불가능 시",
+                  "resolution": "구입가 환급",
+                  "notes": []
+                },
+                {
+                  "condition": "교환된 제품이 1개월 이내에 중요한 수리를 요할 때",
+                  "resolution": "구입가 환급",
+                  "notes": []
+                }
+              ],
+              "notes": [
+                {
+                  "note_title": "제조사가 리퍼부품을 활용하여 수리한 경우",
+                  "content": [
+                    "수리한 날로부터 1년 이내에 소비자가 정상적으로 사용하는 과정에서 그 수리한 부분에 고장이 재발하면 무상으로 수리함."
+                  ],
+                  "sub_notes": []
+                },
+                {
+                  "note_title": "다만, 리퍼부품으로 수리하는 경우",
+                  "content": [
+                    "사업자는 사전에 리퍼적용 대상 부품, 각 부품별 가격을 명확히 소비자에게 고지하여야 함"
+                  ],
+                  "sub_notes": []
+                }
+              ]
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "수리 불가능 시¹⁾",
+                  "resolution": "정액 감가상각한 금액에 10%를 가산하여 환급²⁾",
+                  "notes": [
+                    {
+                      "note_title": "※ 리퍼부품",
+                      "content": [
+                        "기존제품에서 회수된 부품으로서 일정한 가공과정 등을 거침으로써 성능과 품질이 신부품과 동등한 상태로 개선된 부품"
+                      ],
+                      "sub_notes": []
+                    }
+                  ]
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "4",
+          "dispute_type": "소비자가 수리 의뢰한 제품을 사업자가 분실한 경우",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "제품교환 또는 구입가 환급",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "keyword": "품질보증기간",
+                  "content": "* 소비자가 품질보증기간 이내에 수리 등을 요청하였으나 사업자측 사정에 의한 지연 등으로 품질보증기간을 경과하여 완료된 경우, 품질보증기간이 경과되었는지 여부는 수리 등이 사업자측에 접수된 날을 기준으로 판단함",
+                  "matched_by": "keyword"
+                }
+              ]
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "정액 감가상각한 금액에 10%를 가산하여 환급 (한도 : 구입가격)",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "keyword": "부품보유기간",
+                  "content": "* 2)다만, 부품보유기간(내용년수)에 한정하여 적용",
+                  "matched_by": "keyword"
+                }
+              ]
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 7
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "① 전자제품, 사무용기기 (2 - 2)",
+      "items": [
+        {
+          "id": "5",
+          "dispute_type": "부품보유기간 이내에 수리용 부품을 보유하고 있지 않아 발생한 피해",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "정상적인 사용상태에서 성능.기능상의 하자로 인해 발생된 경우",
+                  "resolution": "제품교환 또는 구입가 환급",
+                  "notes": []
+                },
+                {
+                  "condition": "소비자의 고의·과실로 인한 고장인 경우",
+                  "resolution": "유상수리에 해당하는 금액 징수 후 제품교환",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "정액 감가 상각한 잔여 금액에 구입가의 10%를 가산하여 환급",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "6",
+          "dispute_type": "제품구입 시 운송과정에서 발생된 피해",
+          "resolution": "제품교환 (단, 전문 운송기관에 위탁한 경우는 판매자가 운송사에 대해 구상권 행사)",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "7",
+          "dispute_type": "사업자가 제품설치 중 발생된 피해",
+          "resolution": "제품교환",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 8
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "②전기통신기자재, 시계, 재봉기, 광학제품, 아동용품 (2 - 1)",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "구입 후 10일 이내에 정상적인 사용상태에서 발생한 성능·기능상의 하자로 중요한 수리를 요할 때",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "구입 후 1개월 이내에 정상적인 사용상태에서 발생한 성능·기능상의 하자로 중요한 수리를 요할 때",
+          "resolution": "제품교환 또는 무상수리",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "3",
+          "dispute_type": "품질보증기간 이내에 정상적인 사용상태에서 발생한 성능 기능상의 하자",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "하자발생 시",
+                  "resolution": "무상수리",
+                  "notes": []
+                },
+                {
+                  "condition": "수리불가능 시¹⁾",
+                  "resolution": "제품교환 또는 구입가 환급",
+                  "notes": [
+                    {
+                      "keyword": "수리 불가능",
+                      "content": "1)품질보증기간 이내에 동일 하자에 대해 2회까지 수리 하였으나 하자가 재발하는 경우 또는 여러 부위 하자에 대해 4회까지 수리하였으나 하자가 재발하는 경우는 수리 불가능한 것으로 봄.",
+                      "matched_by": "keyword"
+                    },
+                    {
+                      "keyword": "품질보증기간, 수리 지연",
+                      "content": "소비자가 품질보증기간 이내에 수리 등을 요청하였으나 사업자측 사정에 의한 지연 등으로 품질보증기간을 경과하여 완료된 경우, 품질보증기간이 경과되었는지 여부는 수리 등이 사업자측에 접수된 날을 기준으로 판단함",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                },
+                {
+                  "condition": "교환불가능 시",
+                  "resolution": "구입가 환급",
+                  "notes": [
+                    {
+                      "keyword": "품질보증기간, 수리 지연",
+                      "content": "소비자가 품질보증기간 이내에 수리 등을 요청하였으나 사업자측 사정에 의한 지연 등으로 품질보증기간을 경과하여 완료된 경우, 품질보증기간이 경과되었는지 여부는 수리 등이 사업자측에 접수된 날을 기준으로 판단함",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                },
+                {
+                  "condition": "교환된 제품이 1개월 이내에 중요한 수리를 요할 때",
+                  "resolution": "구입가 환급",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "수리 불가능 시¹⁾",
+                  "resolution": "정액 감가상각한 금액에 10%를 가산하여 환급²⁾",
+                  "notes": [
+                    {
+                      "keyword": "수리 불가능",
+                      "content": "1)품질보증기간 이내에 동일 하자에 대해 2회까지 수리 하였으나 하자가 재발하는 경우 또는 여러 부위 하자에 대해 4회까지 수리하였으나 하자가 재발하는 경우는 수리 불가능한 것으로 봄.",
+                      "matched_by": "keyword"
+                    },
+                    {
+                      "keyword": "부품보유기간",
+                      "content": "2)다만, 부품보유기간(내용년수)에 한정하여 적용",
+                      "matched_by": "keyword"
+                    },
+                    {
+                      "keyword": "감가상각방법, 내용연수",
+                      "content": "감가상각방법: 정액법, 내용연수는 별표Ⅳ 품목별 내용연수표(월할계산) 적용",
+                      "matched_by": "keyword"
+                    },
+                    {
+                      "keyword": "감가상각비 계산",
+                      "content": "감가상각비 계산 : (사용연수/내용연수)×구입가",
+                      "matched_by": "keyword"
+                    },
+                    {
+                      "keyword": "감가상각 잔여금 계산",
+                      "content": "감가상각 잔여금 계산 : 구입가-감가상각비",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "4",
+          "dispute_type": "소비자가 수리 의뢰한 제품을 사업자가 분실한 경우",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "제품교환 또는 구입가 환급",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "정액 감가상각한 금액에 10% 가산하여 환급(최고한도 : 구입가격)",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "keyword": "부품보유기간",
+                  "content": "2)다만, 부품보유기간(내용년수)에 한정하여 적용",
+                  "matched_by": "keyword"
+                },
+                {
+                  "keyword": "감가상각방법, 내용연수",
+                  "content": "감가상각방법: 정액법, 내용연수는 별표Ⅳ 품목별 내용연수표(월할계산) 적용",
+                  "matched_by": "keyword"
+                },
+                {
+                  "keyword": "감가상각비 계산",
+                  "content": "감가상각비 계산 : (사용연수/내용연수)×구입가",
+                  "matched_by": "keyword"
+                },
+                {
+                  "keyword": "감가상각 잔여금 계산",
+                  "content": "감가상각 잔여금 계산 : 구입가-감가상각비",
+                  "matched_by": "keyword"
+                }
+              ]
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 9
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "②전기통신기자재, 시계, 재봉기, 광학제품, 아동용품 (2 - 2)",
+      "items": [
+        {
+          "id": "5",
+          "dispute_type": "부품보유기간 이내에 수리용 부품을 보유하고 있지 않아 발생한 피해",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "정상적인 사용 상태에서 성능ㆍ기능상의 하자로 인해 발생된 경우",
+                  "resolution": "제품교환 또는 구입가 환급",
+                  "notes": []
+                },
+                {
+                  "condition": "소비자의 고의ㆍ과실로 인한 고장인 경우",
+                  "resolution": "유상수리에 해당하는 금액 징수 후 제품교환",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "정액감가상각한 잔여 금액에 구입가의 10%를 가산하여 환급",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": [
+            {
+              "keyword": "SET물품",
+              "content": "* 컴퓨터나 전축과 같이 개별 기기 (본체와 주변기기 등)의 조합으로 이루어진 제품 (set물품)을 전체로 구입한 경우의 교환은 각 개별기기를 대상으로 하고, 동일회사에서 판매한 SET물품으로서 개별 기기에 대한 교환이 불가능하여 환급할 때에는 전체를 대상으로 함.",
+              "matched_by": "keyword"
+            },
+            {
+              "keyword": "컴퓨터",
+              "content": "다만, 컴퓨터의 경우는 본체와 모니터, 키보드만을 전체로 봄.",
+              "matched_by": "keyword"
+            },
+            {
+              "keyword": "필수소모품",
+              "content": "토너, 잉크 등 필수소모품 (대체품이 없는 경우)은 부품에 포함됨",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "dispute_type": "제품구입 시 운송과정에서 발생된 피해",
+          "resolution": "제품교환(다만, 전문운송기관에 위탁한 경우는 판매자가 운송사에 대해 구상권 행사)",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "SET물품",
+              "content": "* 컴퓨터나 전축과 같이 개별 기기 (본체와 주변기기 등)의 조합으로 이루어진 제품 (set물품)을 전체로 구입한 경우의 교환은 각 개별기기를 대상으로 하고, 동일회사에서 판매한 SET물품으로서 개별 기기에 대한 교환이 불가능하여 환급할 때에는 전체를 대상으로 함.",
+              "matched_by": "keyword"
+            },
+            {
+              "keyword": "컴퓨터",
+              "content": "다만, 컴퓨터의 경우는 본체와 모니터, 키보드만을 전체로 봄.",
+              "matched_by": "keyword"
+            },
+            {
+              "keyword": "필수소모품",
+              "content": "토너, 잉크 등 필수소모품 (대체품이 없는 경우)은 부품에 포함됨",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "7",
+          "dispute_type": "사업자가 제품설치 중 발생된 피해",
+          "resolution": "제품교환",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "SET물품",
+              "content": "* 컴퓨터나 전축과 같이 개별 기기 (본체와 주변기기 등)의 조합으로 이루어진 제품 (set물품)을 전체로 구입한 경우의 교환은 각 개별기기를 대상으로 하고, 동일회사에서 판매한 SET물품으로서 개별 기기에 대한 교환이 불가능하여 환급할 때에는 전체를 대상으로 함.",
+              "matched_by": "keyword"
+            },
+            {
+              "keyword": "컴퓨터",
+              "content": "다만, 컴퓨터의 경우는 본체와 모니터, 키보드만을 전체로 봄.",
+              "matched_by": "keyword"
+            },
+            {
+              "keyword": "필수소모품",
+              "content": "토너, 잉크 등 필수소모품 (대체품이 없는 경우)은 부품에 포함됨",
+              "matched_by": "keyword"
+            }
+          ]
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 10
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "③스마트폰 (명칭 불문하고 이동통신 3세대 이후의 모든 휴대전화 포함)",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "정상적인 사용상태에서 발생한 성능·기능상의 하자로 중요한 수리를 요하는 사항을 구입 후 10일 이내에 문제 제기",
+          "resolution": "제품 교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "품질보증기간,수리,하자,재발",
+              "content": "1)품질보증기간 중 최근 1년(수리접수일 기준) 이내에 동일하자에 대해 2회까지 수리하였으나 하자가 재발하는 경우 또는 여러 부위 하자에 대해 4회까지 수리하였으나 하자가 재발하는 경우는 수리가 불가능한 경우로 봄.",
+              "matched_by": "keyword"
+            },
+            {
+              "keyword": "리퍼폰,교환,무상수리",
+              "content": "리퍼폰 교환은 무상수리로 봄.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "dispute_type": "정상적인 사용상태에서 발생한 성능·기능상의 하자로 중요한 수리를 요하는 사항을 구입 후 1개월 이내에 문제 제기",
+          "resolution": "제품 교환 또는 무상수리",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "품질보증기간,수리,하자,재발",
+              "content": "1)품질보증기간 중 최근 1년(수리접수일 기준) 이내에 동일하자에 대해 2회까지 수리하였으나 하자가 재발하는 경우 또는 여러 부위 하자에 대해 4회까지 수리하였으나 하자가 재발하는 경우는 수리가 불가능한 경우로 봄.",
+              "matched_by": "keyword"
+            },
+            {
+              "keyword": "리퍼폰,교환,무상수리",
+              "content": "리퍼폰 교환은 무상수리로 봄.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "dispute_type": "정상적인 사용상태에서 발생한 성능·기능상의 하자에 대하여 구입 1개월이 경과한 이후부터 품질보증기간 이내에 문제 제기",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "- 하자발생 시",
+              "resolution": "무상수리",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "keyword": "품질보증기간,정상사용,하자,리퍼폰,교환,수리",
+                  "content": "1)2)품질보증기간 중 최근 1년(수리접수일 기준) 이내에 발생한 정상사용에 따른 하자로 인해 동일인이 4회까지 리퍼폰으로 교환하였으나 또 다시 리퍼폰 교환 사유가 발생하는 경우는 수리 또는 리퍼폰 교환이 불가능한 경우로 봄.",
+                  "matched_by": "keyword"
+                }
+              ]
+            },
+            {
+              "condition": "- 수리 불가능 시",
+              "resolution": "제품 교환 또는 구입가 환급",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "keyword": "품질보증기간,정상사용,하자,리퍼폰,교환,수리",
+                  "content": "1)2)품질보증기간 중 최근 1년(수리접수일 기준) 이내에 발생한 정상사용에 따른 하자로 인해 동일인이 4회까지 리퍼폰으로 교환하였으나 또 다시 리퍼폰 교환 사유가 발생하는 경우는 수리 또는 리퍼폰 교환이 불가능한 경우로 봄.",
+                  "matched_by": "keyword"
+                },
+                {
+                  "keyword": "이동통신사업자,단말기AS,AS",
+                  "content": "이동통신사업자는 이용자가 이동통신사업자의 유통망에서 구매한 단말기AS 등의 요청을 하는 경우에 이를 접수한 후 신속히 AS등에 필요한 조치를 취함.",
+                  "matched_by": "keyword"
+                }
+              ]
+            },
+            {
+              "condition": "- 교환 불가능 시",
+              "resolution": "구입가 환급",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "keyword": "품질보증기간,정상사용,하자,리퍼폰,교환,수리",
+                  "content": "1)2)품질보증기간 중 최근 1년(수리접수일 기준) 이내에 발생한 정상사용에 따른 하자로 인해 동일인이 4회까지 리퍼폰으로 교환하였으나 또 다시 리퍼폰 교환 사유가 발생하는 경우는 수리 또는 리퍼폰 교환이 불가능한 경우로 봄.",
+                  "matched_by": "keyword"
+                },
+                {
+                  "keyword": "이동통신사업자,단말기AS,AS",
+                  "content": "이동통신사업자는 이용자가 이동통신사업자의 유통망에서 구매한 단말기AS 등의 요청을 하는 경우에 이를 접수한 후 신속히 AS등에 필요한 조치를 취함.",
+                  "matched_by": "keyword"
+                }
+              ]
+            },
+            {
+              "condition": "- 교환된 신제품이 교환 후 1개월 이내에 중요한 수리를 요할 때",
+              "resolution": "구입가 환급",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "keyword": "감가상각방법,정액법,내용연수",
+                  "content": "감가상각방법 : 정액법, 내용연수는 별표 IV 품목별 내용연수표(월할계산) 적용",
+                  "matched_by": "keyword"
+                },
+                {
+                  "keyword": "감가상각비,계산,사용연수,내용연수,구입가",
+                  "content": "감가상각비 계산 : (사용연수/내용연수)×구입가",
+                  "matched_by": "keyword"
+                },
+                {
+                  "keyword": "감가상각,잔여금,계산,구입가,감가상각비",
+                  "content": "감가상각 잔여금 계산 : 구입가-감가상각비",
+                  "matched_by": "keyword"
+                }
+              ]
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "4",
+          "dispute_type": "부품보유기간 이내에 수리용 부품을 보유하고 있지 않거나, 이 문제를 리퍼폰 교환으로 해결할 수도 없어 발생한 피해",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "- 품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "ㆍ정상적인 사용상태에서 발생한 성능·기능상의 하자인 경우",
+                  "resolution": "제품교환 또는 구입가 환급",
+                  "notes": [
+                    {
+                      "keyword": "감가상각방법,정액법,내용연수",
+                      "content": "감가상각방법 : 정액법, 내용연수는 별표 IV 품목별 내용연수표(월할계산) 적용",
+                      "matched_by": "keyword"
+                    },
+                    {
+                      "keyword": "감가상각비,계산,사용연수,내용연수,구입가",
+                      "content": "감가상각비 계산 : (사용연수/내용연수)×구입가",
+                      "matched_by": "keyword"
+                    },
+                    {
+                      "keyword": "감가상각,잔여금,계산,구입가,감가상각비",
+                      "content": "감가상각 잔여금 계산 : 구입가-감가상각비",
+                      "matched_by": "keyword"
+                    },
+                    {
+                      "keyword": "리퍼부품,수리,고장,재발,무상수리",
+                      "content": "제조사가 리퍼부품을 활용하여 수리한 경우, 수리한 날로부터 1년 이내에 소비자가 정상적으로 사용하는 과정에서 그 수리한 부분에 고장이 재발하면 무상으로 수리함.",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                },
+                {
+                  "condition": "ㆍ소비자의 고의·과실로 인한 고장인 경우",
+                  "resolution": "유상수리에 해당하는 금액 징수 후 제품교환",
+                  "notes": [
+                    {
+                      "keyword": "리퍼부품,수리,사업자,가격,고지",
+                      "content": "다만, 리퍼부품으로 수리하는 경우 사업자는 사전에 리퍼적용 대상부품, 각 부품별 가격을 명확히 소비자에게 고지하여야 함",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                }
+              ],
+              "notes": []
+            },
+            {
+              "condition": "- 품질보증기간 경과 후",
+              "resolution": "정액감가상각한 잔여금에 구입가의 10%를 가산하여 환급",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "note_title": "※ 리퍼부품",
+                  "content": [
+                    "기존제품에서 회수된 부품으로서 일정한 가공과정 등을 거침으로써 성능과 품질이 신부품과 동등한 상태로 개선된 부품"
+                  ],
+                  "sub_notes": []
+                }
+              ]
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "5",
+          "dispute_type": "제품구입 시 운송과정에서 제품 훼손",
+          "resolution": "제품 교환(단, 전문운송기관에 위탁한 경우는 운송사에 대한 구상권 행사)",
+          "conditions": [],
+          "notes": [
+            {
+              "note_title": "※ 리퍼부품",
+              "content": [
+                "기존제품에서 회수된 부품으로서 일정한 가공과정 등을 거침으로써 성능과 품질이 신부품과 동등한 상태로 개선된 부품"
+              ],
+              "sub_notes": []
+            }
+          ]
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 11
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "④전자담배",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "구입 후 10일 이내에 문제 제기된 정상적인 사용상태에서 발생한 성능.기능상의 하자(액상 누수, 분무량 과다 및 과소 등)로 중요한 수리를 요할 때",
+          "resolution": "제품 교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "구입 후 1개월 이내에 문제 제기된 정상적인 사용상태에서 발생한 성능.기능상의 하자(액상 누수, 분무량 과다 및 과소 등)로 중요한 수리를 요할 때",
+          "resolution": "제품 교환 또는 수리",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "3",
+          "dispute_type": "품질보증기간 이내에 정상적인 사용 상태에서 발생한 성능.기능상의 하자",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "하자 발생 시",
+                  "resolution": "무상 수리",
+                  "notes": []
+                },
+                {
+                  "condition": "수리 불가능 시¹⁾",
+                  "resolution": "제품 교환 또는 구입가 환급",
+                  "notes": [
+                    {
+                      "keyword": "수리 불가능",
+                      "content": "1)품질보증기간 이내에 동일 하자에 대해 2회까지 수리를 하였으나 하자가 재발하는 경우 또는 여러부위 하자에 대해 3회까지 수리를 하였으나 하자가 재발하는 경우는 수리 불가능한 것으로 봄.",
+                      "matched_by": "keyword"
+                    },
+                    {
+                      "keyword": "품질보증기간",
+                      "content": "소비자가 품질보증기간 이내에 수리 등을 요청하였으나 사업자측 사정에 의한 지연 등으로 품질보증기간을 경과하여 완료된 경우, 품질보증기간이 경과되었는지 여부는 수리 등이 사업자측에 접수된 날을 기준으로 판단함",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                },
+                {
+                  "condition": "교환 불가능 시",
+                  "resolution": "구입가 환급",
+                  "notes": []
+                },
+                {
+                  "condition": "교환된 제품이 1개월 이내에 중요한 수리 요할 때",
+                  "resolution": "구입가 환급",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "수리 불가능 시",
+                  "resolution": "정액 감가상각한 금액에 10%를 가산하여 환급²⁾",
+                  "notes": [
+                    {
+                      "keyword": "부품보유기간",
+                      "content": "2)다만, 부품보유기간(내용연수)에 한정하여 적용",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "notes": [
+            {
+              "keyword": "품질보증기간",
+              "content": "품질보증기간 : 1년",
+              "matched_by": "keyword"
+            }
+          ]
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 12
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "⑤자동차 (2 - 1)",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "정상적인 사용상태에서 발생한 성능ㆍ기능상의 하자",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "① 품질보증기간 이내의 경우",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "재질이나 제조상의 결함으로 고장 발생 시",
+                  "resolution": "일차적으로 부품교환을 원칙으로 하되 결함잔존시 관련 기능장치 교환(예 : 원동기, 동력전달장치 등)",
+                  "notes": [
+                    {
+                      "note_title": "※ 품질보증기간",
+                      "sub_notes": [
+                        {
+                          "condition": "차체 및 일반부품",
+                          "resolution": "2년 이내(다만, 주행거리가 4만km를 초과한 경우에는 기간이 만료된 것으로 함)",
+                          "sub_conditions": [],
+                          "notes": []
+                        },
+                        {
+                          "condition": "원동기(엔진) 및 동력전달장치",
+                          "resolution": "3년 이내(다만, 주행거리가 6만km를 초과한 경우에는 기간이 만료된 것으로 함)",
+                          "sub_conditions": [],
+                          "notes": []
+                        }
+                      ],
+                      "keyword": "품질보증기간",
+                      "matched_by": "keyword"
+                    },
+                    {
+                      "keyword": "수리",
+                      "content": "수리는 제조자, 판매자 또는 그의 대리인(직영 또는 지정정비업소)에 의해 수리한 경우로 한정함.",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                },
+                {
+                  "condition": "차량인도일로부터 1개월 이내에 주행 및 안전도 등과 관련한 중대한 결함이 2회 이상 발생하였을 경우",
+                  "resolution": "차량교환 또는 필수제비용을 포함한 구입가 환급",
+                  "notes": [
+                    {
+                      "keyword": "하자",
+                      "content": "하자란 기계적·기능적 결함으로 인한 차량의 사용·가치·안전을 실질적으로 손상시키는 하자로써 외관 및 내장재 마감 등의 단순하자가 아닌 수리가 필요한 하자를 말함",
+                      "matched_by": "keyword"
+                    },
+                    {
+                      "keyword": "중대결함",
+                      "content": "중대결함이란 원동기(엔진) 및 동력전달장치, 제동장치, 조향장치, 기타 이에 준하는 주행·안전도와 관련된 결함을 말함",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                },
+                {
+                  "condition": "차량 인도일로부터 12개월 이내",
+                  "resolution": "",
+                  "sub_conditions": [
+                    {
+                      "condition": "동일하자에 대해 3회까지 수리하였으나 재발하였을 경우",
+                      "resolution": "차량교환 또는 필수제비용을 포함한 구입가 환급",
+                      "notes": [
+                        {
+                          "keyword": "품질보증기간",
+                          "content": "소비자가 품질보증기간 이내에 수리 등을 요청하였으나 사업자측 사정에 의한 지연 등으로 품질보증기간을 경과하여 완료된 경우, 품질보증기간이 경과되었는지 여부는 수리 등 점검을 위해 입고한 날을 기준으로 판단함",
+                          "matched_by": "keyword"
+                        }
+                      ]
+                    },
+                    {
+                      "condition": "주행 및 안전도 등과 관련한 중대한 결함이 발생하여 동일 하자에 대해 2회까지 수리하였으나 재발하였을 경우",
+                      "resolution": "차량교환 또는 필수제비용을 포함한 구입가 환급",
+                      "notes": [
+                        {
+                          "keyword": "품질보증기간",
+                          "content": "소비자가 품질보증기간 이내에 수리 등을 요청하였으나 사업자측 사정에 의한 지연 등으로 품질보증기간을 경과하여 완료된 경우, 품질보증기간이 경과되었는지 여부는 수리 등 점검을 위해 입고한 날을 기준으로 판단함",
+                          "matched_by": "keyword"
+                        }
+                      ]
+                    },
+                    {
+                      "condition": "하자에 대한 수리기간이 누계 30일(작업일수 기준)을 초과할 경우",
+                      "resolution": "차량교환 또는 필수제비용을 포함한 구입가 환급",
+                      "notes": [
+                        {
+                          "keyword": "품질보증기간",
+                          "content": "소비자가 품질보증기간 이내에 수리 등을 요청하였으나 사업자측 사정에 의한 지연 등으로 품질보증기간을 경과하여 완료된 경우, 품질보증기간이 경과되었는지 여부는 수리 등 점검을 위해 입고한 날을 기준으로 판단함",
+                          "matched_by": "keyword"
+                        }
+                      ]
+                    }
+                  ],
+                  "notes": []
+                }
+              ],
+              "notes": []
+            },
+            {
+              "condition": "② 품질보증기간 경과 후",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "수리 불가능시",
+                  "resolution": "정액 감가상각한 금액에 10%를 가산하여 환급2)",
+                  "notes": [
+                    {
+                      "keyword": "부품보유기간",
+                      "content": "2)다만, 부품보유기간(내용년수)에 한하여 적용",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "수리용 부품을 보유하지 않아(부품보유기간 이내)수리가 불가능한 경우",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "① 품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "정상적인 사용상태에서 발생한 경우",
+                  "resolution": "",
+                  "notes": [
+                    {
+                      "keyword": "수리용 부품",
+                      "content": "수리용 부품 미보유 시 피해배상에서 제외되는 경우 : 화재, 충돌 등에 의한 사고차량 중 수리가 불가능한 차량",
+                      "matched_by": "keyword"
+                    },
+                    {
+                      "note_title": "※ 교환 및 환급에 따른 제비용 계산",
+                      "sub_notes": [
+                        {
+                          "condition": "임의비용(종합보험료, 할부 부대비용, 공증료 등)을 제외한 제비용(필수비용: 등록세, 취득세, 교육세, 번호판대 등)",
+                          "resolution": "사업자가 부담함.",
+                          "sub_conditions": [],
+                          "notes": []
+                        },
+                        {
+                          "condition": "차량 임의의 장착비용",
+                          "resolution": "제외함.",
+                          "sub_conditions": [],
+                          "notes": []
+                        }
+                      ],
+                      "keyword": "교환",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                },
+                {
+                  "condition": "차량인도일로부터 12개월 이내",
+                  "resolution": "필수제비용을 포함한 구입가 환급 또는 차량교환",
+                  "notes": [
+                    {
+                      "keyword": "수리용 부품",
+                      "content": "수리용 부품 미보유 시 피해배상에서 제외되는 경우 : 화재, 충돌 등에 의한 사고차량 중 수리가 불가능한 차량",
+                      "matched_by": "keyword"
+                    },
+                    {
+                      "note_title": "※ 교환 및 환급에 따른 제비용 계산",
+                      "sub_notes": [
+                        {
+                          "condition": "임의비용(종합보험료, 할부 부대비용, 공증료 등)을 제외한 제비용(필수비용: 등록세, 취득세, 교육세, 번호판대 등)",
+                          "resolution": "사업자가 부담함.",
+                          "sub_conditions": [],
+                          "notes": []
+                        },
+                        {
+                          "condition": "차량 임의의 장착비용",
+                          "resolution": "제외함.",
+                          "sub_conditions": [],
+                          "notes": []
+                        }
+                      ],
+                      "keyword": "교환",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                },
+                {
+                  "condition": "차량인도일로부터 12개월 초과",
+                  "resolution": "필수제비용을 포함한 구입가에서 정액감가상각비를 공제한 금액에 10%를 가산하여 환급 또는 차량교환",
+                  "notes": [
+                    {
+                      "keyword": "수리용 부품",
+                      "content": "수리용 부품 미보유 시 피해배상에서 제외되는 경우 : 화재, 충돌 등에 의한 사고차량 중 수리가 불가능한 차량",
+                      "matched_by": "keyword"
+                    },
+                    {
+                      "note_title": "※ 교환 및 환급에 따른 제비용 계산",
+                      "sub_notes": [
+                        {
+                          "condition": "임의비용(종합보험료, 할부 부대비용, 공증료 등)을 제외한 제비용(필수비용: 등록세, 취득세, 교육세, 번호판대 등)",
+                          "resolution": "사업자가 부담함.",
+                          "sub_conditions": [],
+                          "notes": []
+                        },
+                        {
+                          "condition": "차량 임의의 장착비용",
+                          "resolution": "제외함.",
+                          "sub_conditions": [],
+                          "notes": []
+                        }
+                      ],
+                      "keyword": "교환",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                },
+                {
+                  "condition": "사용상 과실로 인하여 발생한 경우",
+                  "resolution": "구입가에서 정액 감가상각비를 공제 후 환급 또는 차량교환",
+                  "notes": [
+                    {
+                      "keyword": "수리용 부품",
+                      "content": "수리용 부품 미보유 시 피해배상에서 제외되는 경우 : 화재, 충돌 등에 의한 사고차량 중 수리가 불가능한 차량",
+                      "matched_by": "keyword"
+                    },
+                    {
+                      "note_title": "※ 교환 및 환급에 따른 제비용 계산",
+                      "sub_notes": [
+                        {
+                          "condition": "임의비용(종합보험료, 할부 부대비용, 공증료 등)을 제외한 제비용(필수비용: 등록세, 취득세, 교육세, 번호판대 등)",
+                          "resolution": "사업자가 부담함.",
+                          "sub_conditions": [],
+                          "notes": []
+                        },
+                        {
+                          "condition": "차량 임의의 장착비용",
+                          "resolution": "제외함.",
+                          "sub_conditions": [],
+                          "notes": []
+                        }
+                      ],
+                      "keyword": "교환",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 13
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "⑤자동차 (2 - 2)",
+      "items": [
+        {
+          "id": "2",
+          "dispute_type": "품질보증기간 경과 후",
+          "resolution": "필수제비용을 포함한 구입가에서 정액감가상각비를 공제한 금액에 10%를 가산하여 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "note_title": "※ 감가상각방법",
+              "content": [
+                "정액법. 내용연수는 별표Ⅳ 품목별 내용연수표(월할계산) 적용"
+              ],
+              "sub_notes": []
+            },
+            {
+              "keyword": "감가상각비 계산",
+              "content": "감가상각비 계산 : (사용연수/내용연수)×구입가(필수제비용 포함 : 등록세, 취득세, 교육세, 번호판대 등)",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "dispute_type": "내구연한 경과 후 수리용부품의 의무보유기간 이내",
+          "resolution": "필수제비용을 포함한 구입가의 10%를 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "note_title": "※ 감가상각방법",
+              "content": [
+                "정액법. 내용연수는 별표Ⅳ 품목별 내용연수표(월할계산) 적용"
+              ],
+              "sub_notes": []
+            },
+            {
+              "keyword": "감가상각비 계산",
+              "content": "감가상각비 계산 : (사용연수/내용연수)×구입가(필수제비용 포함 : 등록세, 취득세, 교육세, 번호판대 등)",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "dispute_type": "사전에 서면최고 없이 할부보증보험에 잔여할부금을 보험 청구한 경우",
+          "resolution": "청구취소",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "5",
+          "dispute_type": "차량 인도 시 이미 하자가 있는 경우(탁송과정 중 발생한 차량하자 포함)",
+          "resolution": "보상 또는 무상수리, 차량교환, 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "육안으로 식별 가능한 하자",
+              "content": "판금, 도장 등 육안으로 식별 가능한 하자일 경우에는 차량 인수 후 7일 이내에 이의를 제기하여야 함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "dispute_type": "자동차옵션용품(에어백, ARS, 원격시동경보기, 차량용 내비게이션, 블랙박스, 하이패스 단말기 등)의 하자",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "당해 옵션용품 품질보증기간 이내",
+              "resolution": "무상수리, 구입가 환급 또는 교환",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "note_title": "※ 보상책임자",
+                  "content": [
+                    "차량 출고 시 장착된 옵션 용품 : 자동차회사",
+                    "차량 출고 후 장착된 옵션 용품 : 용품 제조업자, 판매자, 장착 사업자 및 지도 업데이트 사업자(차량용 내비게이션에 한함) 중 책임있는 사업자"
+                  ],
+                  "sub_notes": []
+                },
+                {
+                  "keyword": "지도 업데이트서비스",
+                  "content": "차량용 내비게이션 (사용연한)의 지도 업데이트서비스가 1년이상 제공되지 않을 경우 서비스 불이행으로 간주하고 동 서비스 불이행에 책임있는 제조업자 또는 판매업자가 구입가에서 정액감가상각한 금액에 10% 가산한 금액을 환급함.",
+                  "matched_by": "keyword"
+                }
+              ]
+            },
+            {
+              "condition": "당해 옵션용품 품질보증기간 이후",
+              "resolution": "유상수리",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "note_title": "※ 보상책임자",
+                  "content": [
+                    "차량 출고 시 장착된 옵션 용품 : 자동차회사",
+                    "차량 출고 후 장착된 옵션 용품 : 용품 제조업자, 판매자, 장착 사업자 및 지도 업데이트 사업자(차량용 내비게이션에 한함) 중 책임있는 사업자"
+                  ],
+                  "sub_notes": []
+                },
+                {
+                  "keyword": "지도 업데이트서비스",
+                  "content": "차량용 내비게이션 (사용연한)의 지도 업데이트서비스가 1년이상 제공되지 않을 경우 서비스 불이행으로 간주하고 동 서비스 불이행에 책임있는 제조업자 또는 판매업자가 구입가에서 정액감가상각한 금액에 10% 가산한 금액을 환급함.",
+                  "matched_by": "keyword"
+                }
+              ]
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "notes": [
+        {
+          "note_title": "<수리 소요기간 계산>",
+          "content": [
+            "수리기간은 실제 작업에 소요된 작업일수를 기준으로 함",
+            "소비자가 서면으로 제조자, 판매자 또는 그 대리인에게 하자수리신청을 한 경우에만 누계일수에 포함(제조자, 판매자 및 그 대리인은 수리신청서를 비치·교부하여야 함)",
+            "당일로 수리가 될 때는 수리소요기간을 1일로 계산하고 1일 이상 수리 기간이 소요될 때는 초일을 산입하여 수리 소요기간을 계산(단, 공휴일 및 파업, 천재지변 등에 의해 수리가 불가능한 경우는 누계일수에서 제외)"
+          ],
+          "sub_notes": []
+        }
+      ],
+      "reference": {
+        "근거법령": "「자동차관리법」 제31조, 제47조의2, 제74조의2, 시행규칙 제49조의3 [국토교통부]",
+        "기타법령": "「자동차 및 자동차부품의 기능과 기준에 관한 규칙 [국토교통부]",
+        "분쟁조정기구": "자동차안전하자심의위원회"
+      },
+      "source_page": 14
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "⑥모터사이클",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "정상적인 사용상태에서 발생한 성능ㆍ기능상의 하자",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 및 주행거리 이내의 경우",
+              "resolution": "무상수리 또는 부품교환",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "재질이나 제조상의 결함으로 고장발생 시",
+              "resolution": "무상수리 또는 부품교환",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "엔진 또는 전장부분(점화장치, 충전장치, 시동장치)에 발생한 동일 하자에 대해 2회까지 수리하였으나 고장이 재발(3회째)",
+              "resolution": "제품교환 또는 구입비 환급",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "품질보증기간 이후",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "수리불가능 시",
+                  "resolution": "정액 감가상각한 금액에 10%를 가산하여 환급",
+                  "notes": [
+                    {
+                      "keyword": "부품보유기간",
+                      "content": "1)다만, 부품보유기간(내용연수)에 한정하여 적용",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                }
+              ],
+              "notes": [
+                {
+                  "keyword": "품질보증기간",
+                  "content": "소비자가 품질보증기간 이내에 수리 등을 요청하였으나 사업자측 사정에 의한 지연 등으로 품질보증기간을 경과하여 완료된 경우, 품질보증기간이 경과되었는지 여부는 수리 등이 접수된 날을 기준으로 판단함",
+                  "matched_by": "keyword"
+                }
+              ]
+            }
+          ],
+          "notes": [
+            {
+              "keyword": "감가상각",
+              "content": "감가상각방법 : 정액법, 내용연수는 별표Ⅳ 품목별 내용연수표(월할계산) 적용",
+              "matched_by": "keyword"
+            },
+            {
+              "keyword": "감가상각",
+              "content": "감가상각비 계산 : (사용연수/내용연수)×구입가(필수제비용 포함 : 등록세, 취득세, 교육세, 번호판대 등)",
+              "matched_by": "keyword"
+            },
+            {
+              "keyword": "감가상각",
+              "content": "감가상각 잔여금 계산 : 구입가 - 감가상각비",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "dispute_type": "부품의 미보유(부품보유기간 이내)로 수리가 불가한 경우",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "정상적인 사용상태에서 발생한 경우",
+                  "resolution": "필수제비용을 포함한 구입가 환급 또는 제품교환",
+                  "notes": []
+                },
+                {
+                  "condition": "사용상 과실로 인하여 발생한 경우",
+                  "resolution": "구입가에서 정액감가상각비 공제 후 환급 또는 제품교환",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "필수제비용을 포함한 구입가에서 정액 감가상각한 잔여금액에 필수제비용을 포함한 구입가의 10%를 가산하여 환급",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 15
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "⑦자 전 거",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "구입 후 1개월 이내에 정상적인 사용상태에서 발생한 성능·기능상의 하자로 중요한 수리를 요할 때",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "품질보증기간 이내에 정상적인 사용상태에서 발생한 성능ㆍ기능상의 하자로 인한 피해",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "하자 발생 시",
+                  "resolution": "무상수리",
+                  "notes": []
+                },
+                {
+                  "condition": "수리 불가능 시¹⁾",
+                  "resolution": "제품교환 또는 구입가 환급",
+                  "notes": [
+                    {
+                      "keyword": "수리 불가능",
+                      "content": "¹⁾품질보증기간 이내에 동일 하자에 대해 2회까지 수리하였으나 하자가 재발하는 경우 또는 여러 부위 하자에 대해 4회까지 수리하였으나 하자가 재발하는 경우는 수리 불가능한 것으로 봄.",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                },
+                {
+                  "condition": "교환 불가능 시",
+                  "resolution": "구입가 환급",
+                  "notes": []
+                },
+                {
+                  "condition": "교환된 제품이 1개월 이내에 중요한 수리를 요할 때",
+                  "resolution": "구입가 환급",
+                  "notes": []
+                }
+              ],
+              "notes": [
+                {
+                  "keyword": "품질보증기간",
+                  "content": "* 소비자가 품질보증기간 이내에 수리 등을 요청하였으나 사업자측 사정에 의한 지연 등으로 품질보증기간을 경과하여 완료된 경우, 품질보증기간이 경과되었는지 여부는 수리 등이 사업자측에 접수된 날을 기준으로 판단함",
+                  "matched_by": "keyword"
+                }
+              ]
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "수리 불가능 시",
+                  "resolution": "정액 감가상각한 금액에 10%를 가산하여 환급²⁾",
+                  "notes": [
+                    {
+                      "keyword": "부품보유기간",
+                      "content": "²⁾다만, 부품보유기간(내용년수)에 한정하여 적용",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 16
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "⑧ 타이어",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "세퍼레이션(Separation)",
+          "resolution": "o 제품교환(교환 불가능 시 환급)",
+          "conditions": [
+            {
+              "condition": "접착불량",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "공기잠입에 의한 주행 중 성장",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "미가황에 의한 물성변화",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "이물입상태(모래, 약품 등)",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": [
+            {
+              "keyword": "적용",
+              "content": "* 적용 : 제조상 과실에 의한 손상인 경우",
+              "matched_by": "keyword"
+            },
+            {
+              "keyword": "교환",
+              "content": "* 교환 : 마모율 10% 미만",
+              "matched_by": "keyword"
+            },
+            {
+              "keyword": "환급",
+              "content": "* 환급 : 마모율 10% 이상 80% 미만",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "dispute_type": "균열(Cracking)",
+          "resolution": "o 제품교환(교환 불가능 시 환급)",
+          "conditions": [
+            {
+              "condition": "트레드(Tread)와 사이드 월(side wall)접합부 불량",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "과가황에 의한 물성변화",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": [
+            {
+              "keyword": "환급 금액",
+              "content": "* 환급 금액=구입가×(1-마모율)",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "dispute_type": "비드(Bead)부 파손",
+          "resolution": "o 제품교환(교환 불가능 시 환급)",
+          "conditions": [
+            {
+              "condition": "비드부위에 공기가 들어감",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "비드부위에 미가황",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "비드와이어 위치불량",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "가황 후 몰드 및 팽창기에서 인출 시 비드부위 손상",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "비드 굴곡",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "비드와이어 접착불량",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": [
+            {
+              "note_title": "* 마모율(%)",
+              "sub_notes": [
+                {
+                  "condition": "ㆍ(표준스키드 깊이 - 잔여스키드깊이)/표준스키드깊이 × 100",
+                  "resolution": "",
+                  "sub_conditions": [],
+                  "notes": []
+                }
+              ]
+            },
+            {
+              "note_title": "* 보상제외",
+              "sub_notes": [
+                {
+                  "condition": "ㆍ마모율 80% 이상인 경우",
+                  "resolution": "",
+                  "sub_conditions": [],
+                  "notes": []
+                },
+                {
+                  "condition": "ㆍ수리제품",
+                  "resolution": "",
+                  "sub_conditions": [],
+                  "notes": []
+                },
+                {
+                  "condition": "ㆍ구입일로부터 3년 이상인 제품 (증빙서 없는 경우는 제조일을 기준함)",
+                  "resolution": "",
+                  "sub_conditions": [],
+                  "notes": []
+                },
+                {
+                  "condition": "ㆍ부당한 목적을 갖고 고타이어를 수집하여 보상청구를 한 것이 분명한 제품",
+                  "resolution": "",
+                  "sub_conditions": [],
+                  "notes": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "dispute_type": "치핑, 청킹, 컷팅(Chipping, Chunking, Cutting)",
+          "resolution": "o 제품교환(교환 불가능 시 환급)",
+          "conditions": [
+            {
+              "condition": "배합고무 분배불량에 의해서 고무가 떨어짐",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "과가황에 의한 고무 떨어짐.",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": [
+            {
+              "note_title": "* 마모율(%)",
+              "sub_notes": [
+                {
+                  "condition": "ㆍ(표준스키드 깊이 - 잔여스키드깊이)/표준스키드깊이 × 100",
+                  "resolution": "",
+                  "sub_conditions": [],
+                  "notes": []
+                }
+              ]
+            },
+            {
+              "note_title": "* 보상제외",
+              "sub_notes": [
+                {
+                  "condition": "ㆍ마모율 80% 이상인 경우",
+                  "resolution": "",
+                  "sub_conditions": [],
+                  "notes": []
+                },
+                {
+                  "condition": "ㆍ수리제품",
+                  "resolution": "",
+                  "sub_conditions": [],
+                  "notes": []
+                },
+                {
+                  "condition": "ㆍ구입일로부터 3년 이상인 제품 (증빙서 없는 경우는 제조일을 기준함)",
+                  "resolution": "",
+                  "sub_conditions": [],
+                  "notes": []
+                },
+                {
+                  "condition": "ㆍ부당한 목적을 갖고 고타이어를 수집하여 보상청구를 한 것이 분명한 제품",
+                  "resolution": "",
+                  "sub_conditions": [],
+                  "notes": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "dispute_type": "이음매 벌어짐(Joint Open)",
+          "resolution": "o 제품교환(교환 불가능 시 환급)",
+          "conditions": [
+            {
+              "condition": "트레이드의 이음매 부위가 접착불량으로 벌어짐.",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "사이드 월 이음매 부위가 접착불량으로 벌어짐.",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": [
+            {
+              "keyword": "상표명",
+              "content": "* 상표명이 없는 제품",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "dispute_type": "공기누출(Air Leakage)",
+          "resolution": "o 제품교환(교환 불가능 시 환급)",
+          "conditions": [
+            {
+              "condition": "송곳(Awling)작업 불량에 의한 공기누출",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "비드 위치불량, 굴곡 Toe 불량으로 인한 공기누출",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": [
+            {
+              "keyword": "상표명",
+              "content": "* 상표명이 없는 제품",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "7",
+          "dispute_type": "계약한 규격과 인수한 규격이 다를 경우",
+          "resolution": "o 제품교환(교환 불가능 시 환급)",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "상표명",
+              "content": "* 상표명이 없는 제품",
+              "matched_by": "keyword"
+            }
+          ]
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 17
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "⑨보 일 러",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "구입 후 10일 이내에 정상적인 사용상태에서 발생한 성능·기능상의 하자로 중요한 수리를 요할 때",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "교환 및 환급",
+              "content": "교환 및 환급에 따른 비용 계산 : 제설비에 따른 시공비용 포함",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "dispute_type": "구입 후 1개월 이내에 정상적인 사용상태에서 발생한 성능·기능상의 하자로 중요한 수리를 요할 때",
+          "resolution": "제품교환 또는 무상 수리",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "3",
+          "dispute_type": "품질보증기간 이내에 정상적인 사용상태에서 발생한 성능ㆍ기능상의 하자발생",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "하자 발생 시",
+                  "resolution": "무상수리",
+                  "notes": []
+                },
+                {
+                  "condition": "수리 불가능 시1)",
+                  "resolution": "제품교환 또는 구입가 환급",
+                  "notes": [
+                    {
+                      "keyword": "품질보증기간",
+                      "content": "품질보증기간 이내에 동일 하자에 대해 2회까지 수리하였으나 하자가 재발하는 경우 또는 여러부위 하자에 대해 4회까지 수리하였으나 하자가 재발하는 경우는 수리 불가능한 것으로 봄.",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                },
+                {
+                  "condition": "교환 불가능 시",
+                  "resolution": "구입가 환급",
+                  "notes": []
+                },
+                {
+                  "condition": "교환된 제품이 1개월 이내에 중요한 수리를 요할 때",
+                  "resolution": "구입가 환급",
+                  "notes": []
+                }
+              ],
+              "notes": [
+                {
+                  "keyword": "품질보증기간",
+                  "content": "소비자가 품질보증기간 이내에 수리 등을 요청하였으나 사업자측 사정에 의한 지연 등으로 품질보증기간을 경과하여 완료된 경우, 품질보증기간이 경과되었는지 여부는 수리 등이 사업자측에 접수된 날을 기준으로 판단함",
+                  "matched_by": "keyword"
+                }
+              ]
+            },
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "수리 불가능 시",
+                  "resolution": "정액 감가상각한 금액에 10%를 가산하여 환급2)",
+                  "notes": [
+                    {
+                      "keyword": "부품보유기간",
+                      "content": "다만, 부품보유기간(내용연수)에 한정하여 적용",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "4",
+          "dispute_type": "수리용 부품을 보유하고 있지 않아 (부품 의무 보유기간 이내) 발생한 피해",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "정상적인 사용상태에서 성능.기능상의 하자로 인해 발생한 경우",
+                  "resolution": "제품교환 또는 환급",
+                  "notes": []
+                },
+                {
+                  "condition": "소비자의 고의·과실로 인한 고장인 경우",
+                  "resolution": "정액감가상각비 공제 후 환급 또는 제품교환",
+                  "notes": [
+                    {
+                      "note_title": "감가상각 방법",
+                      "content": [
+                        "정액법, 내용연수는 별표V 품목별 내용연수표(월할계산) 적용"
+                      ],
+                      "sub_notes": [
+                        {
+                          "condition": "감가상각비 계산",
+                          "resolution": "(사용연수/내용연수)×구입가",
+                          "sub_conditions": [],
+                          "notes": []
+                        },
+                        {
+                          "condition": "감가상각 잔여금 계산",
+                          "resolution": "구입가-감가상각비",
+                          "sub_conditions": [],
+                          "notes": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "notes": []
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "정액감가상각한 잔여금액에 구입가의 10%를 가산하여 환급",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "note_title": "감가상각 방법",
+                  "content": [
+                    "정액법, 내용연수는 별표V 품목별 내용연수표(월할계산) 적용"
+                  ],
+                  "sub_notes": [
+                    {
+                      "condition": "감가상각비 계산",
+                      "resolution": "(사용연수/내용연수)×구입가",
+                      "sub_conditions": [],
+                      "notes": []
+                    },
+                    {
+                      "condition": "감가상각 잔여금 계산",
+                      "resolution": "구입가-감가상각비",
+                      "sub_conditions": [],
+                      "notes": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "5",
+          "dispute_type": "품질보증기간 이내에 시공 상의 하자가 있는 경우",
+          "resolution": "무상수리 또는 배상(시공업자 책임)",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 18
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "⑩연 탄",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "품질기준미달",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "석탄산업법 시행규칙 별표3. 「석탄가공제품의 품질기준과 검사방법」에서 정한 품질기준에 미달",
+              "resolution": "제품교환",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "불완전 연소",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "제품수거 검사 후 제품에 이상이 있을 시",
+              "resolution": "제품교환",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "3",
+          "dispute_type": "재·탄이 잘 깨어질 경우",
+          "resolution": "제품교환",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "4",
+          "dispute_type": "연소시간 결함",
+          "resolution": "제품교환",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "5",
+          "dispute_type": "저장품 파손",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "사용자 실수",
+              "resolution": "용적 및 중량에서 유통비용 공제 후 제품교환",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "6",
+          "dispute_type": "이물질(화약류 등) 혼입에 의하여 연소 중 폭발",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "재산피해",
+              "resolution": "손해액 전액 배상",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "인명피해",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "부상",
+                  "resolution": "완치 시까지 치료비 및 인정할 수 있는 경비 배상",
+                  "notes": []
+                },
+                {
+                  "condition": "사망",
+                  "resolution": "합의배상",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 19
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "⑪가구 (3-1)",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "좀 등 벌레발생",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "구입일로부터 10일 이내",
+              "resolution": "제품교환 또는 구입가 환급",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "구입일로부터 2년 이내",
+              "resolution": "무상수리 또는 부품교환",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "부품교환 후 하자 재발생",
+              "resolution": "제품교환",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "문짝 휨",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "문짝길이의 0.5% 이상",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "구입일로부터 6개월 이내",
+                  "resolution": "제품교환",
+                  "notes": []
+                },
+                {
+                  "condition": "구입일로부터 3년 이내",
+                  "resolution": "무상수리 또는 부품교환",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            },
+            {
+              "condition": "문짝길이의 0.5% 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "구입일로부터 3년 이내",
+                  "resolution": "무상수리 또는 부품교환",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "3",
+          "dispute_type": "백화현상 및 도장불량",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "구입일로부터 10일 이내",
+              "resolution": "제품교환 또는 구입가 환급",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "구입일로부터 6개월 이내",
+              "resolution": "제품교환",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "구입일로부터 3년 이내",
+              "resolution": "무상수리 또는 부품교환",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "수리 후 동일하자 발생",
+              "resolution": "제품교환",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "4",
+          "dispute_type": "장류 등 세트단위 가구의 색상차이",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "구입일로부터 1개월 이내",
+              "resolution": "제품교환(동일색상이 없는 경우 구입가 환급)",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "5",
+          "dispute_type": "장류 등 세트단위 가구의 변색",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "구입일로부터 10일 이내",
+              "resolution": "제품교환 또는 구입가 환급",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "구입일로부터 1년 이내",
+              "resolution": "제품교환",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "6",
+          "dispute_type": "악취 등 자극성냄새(화학제품 등)",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "구입일로부터 6개월 이내",
+              "resolution": "제품교환 또는 구입가 환급",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 20
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "⑪가 구 (3.-2)",
+      "items": [
+        {
+          "id": "7",
+          "dispute_type": "규격치수허용오차(±5mm 이상)",
+          "resolution": "제품교환",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "8",
+          "dispute_type": "칠기가구의 균열, 패각떨어짐, 패각변색 등",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "구입일로부터 10일 이내",
+              "resolution": "제품교환 또는 구입가 환급",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "구입일로부터 1년 이내",
+              "resolution": "무상수리 또는 부품교환",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "9",
+          "dispute_type": "등가구의 균열.뒤틀림 또는 변색",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "구입일로부터 10일 이내",
+              "resolution": "제품교환 또는 구입가 환급",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "구입일로부터 1년 이내",
+              "resolution": "무상수리 또는 부품교환",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "10",
+          "dispute_type": "침대품질불량(스프링, 매트리스 등)",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "구입일로부터 10일 이내",
+              "resolution": "제품교환 또는 구입가 환급",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "구입일로부터 1년 이내",
+              "resolution": "부품교환 및 제품교환",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "11",
+          "dispute_type": "소파품질불량(재료의 변색, 찢어짐, 균열, 스프링불량 등)",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "구입일로부터 10일 이내",
+              "resolution": "제품교환 또는 구입가 환급",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "구입일로부터 1년 이내",
+              "resolution": "무상수리 또는 부품교환",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "구입일로부터 1년 이후",
+              "resolution": "유상수리",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "12",
+          "dispute_type": "제조 과정이나 신제품을 인도하면서 생긴 흠집",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "구입일로부터 15일 이내(단, 소비자가 제조 및 신제품인도시 생긴 흠집임을 입증하는 경우는 제외한다)",
+              "resolution": "제품교환",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "13",
+          "dispute_type": "상표남용 등 유사제품 판매",
+          "resolution": "구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "14",
+          "dispute_type": "품질보증기간 내에 동일하자에 대해 2회 수리 받았으나 재발(3회째)",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 21
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "⑩가구 (3-3)",
+      "items": [
+        {
+          "id": "15",
+          "dispute_type": "선금지급 후 물품배달 전 해약 시",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "① 소비자 귀책사유로 인한 해약",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "- 주문제작형 가구인 경우",
+                  "resolution": "",
+                  "sub_conditions": [
+                    {
+                      "condition": "ㆍ 가구 제작 작업 착수 이전",
+                      "resolution": "위약금 배상(총 제품금액의 10%)",
+                      "notes": []
+                    },
+                    {
+                      "condition": "ㆍ 가구 제작 작업 착수 이후",
+                      "resolution": "실손해배상",
+                      "notes": []
+                    }
+                  ],
+                  "notes": []
+                },
+                {
+                  "condition": "- 주문제작형 이외의 가구인 경우",
+                  "resolution": "",
+                  "sub_conditions": [
+                    {
+                      "condition": "ㆍ 배달 3일 전까지",
+                      "resolution": "선금에서 물품대금의 5% 공제후 환급",
+                      "notes": []
+                    },
+                    {
+                      "condition": "ㆍ 배달 1일 전까지",
+                      "resolution": "선금에서 물품대금의 10% 공제후 환급",
+                      "notes": []
+                    }
+                  ],
+                  "notes": []
+                }
+              ],
+              "notes": []
+            },
+            {
+              "condition": "② 사업자 귀책사유로 인한 해약",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "- 선금이 물품대금의 10% 이하인 경우",
+                  "resolution": "선금의 배액",
+                  "sub_conditions": [],
+                  "notes": []
+                },
+                {
+                  "condition": "- 선금이 물품대금의 10%를 초과하는 경우",
+                  "resolution": "선금에서 물품대금의 10%를 가산하여 환급",
+                  "sub_conditions": [],
+                  "notes": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "16",
+          "dispute_type": "수리가 불가능하여 발생한 피해",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "- 품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "ㆍ 정상적인 사용 상태에서 발생한 경우",
+                  "resolution": "제품교환 또는 구입가 환급",
+                  "notes": []
+                },
+                {
+                  "condition": "ㆍ 소비자의 과실로 인하여 발생한 경우",
+                  "resolution": "구입가에서 정액감가상각비 공제후 환급 또는 제품교환",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            },
+            {
+              "condition": "- 품질보증기간 경과 후",
+              "resolution": "정액 감가 상각한 잔여금액에 구입가의 5%를 가산하여 환급",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": [
+            {
+              "keyword": "감가상각방법",
+              "content": "감가상각방법 : 정액법, 내용연수는 별표Ⅳ 품목별 내용연수표(월할계산) 적용",
+              "matched_by": "keyword"
+            },
+            {
+              "keyword": "감가상각비 계산",
+              "content": "감가상각비 계산 : (사용연수/내용연수)×구입가",
+              "matched_by": "keyword"
+            },
+            {
+              "keyword": "감가상각 잔여금 계산",
+              "content": "감가상각 잔여금 계산 : 구입가-감가상각비",
+              "matched_by": "keyword"
+            }
+          ]
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 22
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "⑫주방용품",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "제품구입 후 1개월 이내에 자연 발생한 품질, 성능ㆍ기능상의 하자로 인한 피해",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "감가상각방법",
+              "content": "* 감가상각방법: 정액법, 내용연수는 별표Ⅳ 품목별 내용연수표(월할계산) 적용\nㆍ감가상각비 계산:(사용연수/내용연수)×구입가\nㆍ감가상각 잔여금 계산: 구입가-감가상각비",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "dispute_type": "품질보증기간 이내에 정상적인 사용상태에서 발생한 품질ㆍ성능ㆍ기능상의 하자로 인한 피해",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "하자 발생 시",
+                  "resolution": "무상수리",
+                  "notes": []
+                },
+                {
+                  "condition": "수리하였으나 하자가 재발(2회째)",
+                  "resolution": "제품교환",
+                  "notes": []
+                },
+                {
+                  "condition": "수리 불가능 시",
+                  "resolution": "제품교환",
+                  "notes": []
+                },
+                {
+                  "condition": "교환 불가능 시 또는 교환받았으나 동종의 하자가 발생한 경우",
+                  "resolution": "구입가 환급",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "수리 불가능 시",
+                  "resolution": "정액 감가상각한 금액에 10%를 가산하여 환급¹⁾",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "notes": [
+            {
+              "keyword": "감가상각방법",
+              "content": "* 감가상각방법: 정액법, 내용연수는 별표Ⅳ 품목별 내용연수표(월할계산) 적용\nㆍ감가상각비 계산:(사용연수/내용연수)×구입가\nㆍ감가상각 잔여금 계산: 구입가-감가상각비",
+              "matched_by": "keyword"
+            },
+            {
+              "keyword": "품질보증기간",
+              "content": "* 소비자가 품질보증기간 이내에 수리 등을 요청하였으나 사업자측 사정에 의한 지연 등으로 품질보증기간을 경과하여 완료된 경우, 품질보증기간이 경과되었는지 여부는 수리 등이 사업자측에 접수된 날을 기준으로 판단함",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "dispute_type": "부품보유기간 이내에 수리용 부품을 보유하고 있지 않아 발생한 피해",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "정상적인 상태에서 자연 발생한 품질, 성능.기능상의 하자로 인해 발생된 경우",
+                  "resolution": "제품교환 또는 구입비 환급",
+                  "notes": []
+                },
+                {
+                  "condition": "소비자의 고의ㆍ과실로 인한 고장인 경우",
+                  "resolution": "유상수리에 해당하는 금액징수 후 제품교환",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "수리 불가능 시",
+                  "resolution": "정액감가상각한 잔여금액에 구입가의 10%를 가산하여 환급",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "notes": [
+            {
+              "keyword": "품질보증기간",
+              "content": "* 소비자가 품질보증기간 이내에 수리 등을 요청하였으나 사업자측 사정에 의한 지연 등으로 품질보증기간을 경과하여 완료된 경우, 품질보증기간이 경과되었는지 여부는 수리 등이 사업자측에 접수된 날을 기준으로 판단함",
+              "matched_by": "keyword"
+            },
+            {
+              "keyword": "부품보유기간",
+              "content": "¹⁾ 다만, 부품보유기간(내용연수)에 한정하여 적용",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "dispute_type": "소비자가 수리 의뢰한 제품을 사업자가 분실했을 경우",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "제품교환 또는 구입가 환급",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "정액감가상각한 금액에 10%를 가산하여 환급(한도 : 구입가격)",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": [
+            {
+              "keyword": "부품보유기간",
+              "content": "¹⁾ 다만, 부품보유기간(내용연수)에 한정하여 적용",
+              "matched_by": "keyword"
+            }
+          ]
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 23
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "⑬전 구",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "구입일로부터 30일 이내에 제품의 성능.기능상의 하자가 있는 경우(베이스불량, 점등이 되지 않는 경우, 흑화현상 등)",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "유통과정에서 제품에 하자가 발생한 경우",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 24
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "⑭문 구",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "정상적인 사용 상태에서 제품하자 발생",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "하자로 인한 피해 발생",
+          "resolution": "제품교환 및 손해배상",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 24
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "⑮생활위생용품",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "이물혼입",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "품질, 성능, 기능 불량",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "3",
+          "dispute_type": "용기 불량으로 인한 피해사고",
+          "resolution": "치료비, 경비 및 일실소득 배상",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "일실소득",
+              "content": "* 일실소득 : 피해로 인하여 소득상실이 발생한 것이 입증된 때에 한하며, 금액을 입증할 수 없는 경우에는 시중 노임단가를 기준으로 함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "dispute_type": "부작용",
+          "resolution": "치료비, 경비 및 일실소득 배상",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "일실소득",
+              "content": "* 일실소득 : 피해로 인하여 소득상실이 발생한 것이 입증된 때에 한하며, 금액을 입증할 수 없는 경우에는 시중 노임단가를 기준으로 함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "dispute_type": "수량부족",
+          "resolution": "부족수량 지급",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 24
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "⑥약 기",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "구입 후 10일 이내에 정상적인 사용상태에서 발생한 성능·기능상의 하자로 중요한 수리를 요할 때",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "구입 후 1개월 이내에 정상적인 사용상태에서 발생한 성능·기능상의 하자로 중요한 수리를 요할 때",
+          "resolution": "제품교환 또는 무상수리",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "3",
+          "dispute_type": "품질보증기간 이내에 정상적인 사용상태에서 발생한 성능·기능상의 하자발생",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "하자 발생 시",
+                  "resolution": "무상수리",
+                  "notes": []
+                },
+                {
+                  "condition": "수리 불가능 시¹⁾",
+                  "resolution": "제품교환 또는 구입가 환급",
+                  "notes": [
+                    {
+                      "keyword": "수리 불가능",
+                      "content": "¹⁾품질보증기간 이내에 동일하자에 대해 2회까지 수리하였으나 하자가 재발하는 경우 또는 여러 부위 하자에 대해 4회까지 수리하였으나 하자가 재발하는 경우는 수리 불가능한 것으로 봄.",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                },
+                {
+                  "condition": "교환 불가능 시",
+                  "resolution": "구입가 환급",
+                  "notes": []
+                },
+                {
+                  "condition": "교환된 제품이 1개월 이내에 중요한 수리를 요할 때",
+                  "resolution": "구입가 환급",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "수리 불가능 시",
+                  "resolution": "",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "notes": [
+            {
+              "keyword": "품질보증기간",
+              "content": "²⁾소비자가 품질보증기간 이내에 수리 등을 요청하였으나 사업자측 사정에 의한 지연 등으로 품질보증기간을 경과하여 완료된 경우, 품질보증기간이 경과되었는지 여부는 수리 등이 사업자측에 접수된 날을 기준으로 판단함",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "dispute_type": "조율",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내 : 2회",
+              "resolution": "무상조율",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "품질보증기간 이후",
+              "resolution": "유상조율",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": [
+            {
+              "keyword": "부품보유기간",
+              "content": "²⁾다만, 부품보유기간(내용년수)에 한정하여 적용",
+              "matched_by": "keyword"
+            }
+          ]
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 25
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "⑦가죽제품",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "접착불량",
+          "resolution": "①무상수리 → ②교환 → ③환급",
+          "conditions": [],
+          "notes": [
+            {
+              "note_title": "교환/환급기준",
+              "content": [],
+              "sub_notes": [
+                {
+                  "condition": "(품질보증기간 이내)",
+                  "resolution": "구입가 기준",
+                  "sub_conditions": [],
+                  "notes": []
+                },
+                {
+                  "condition": "(품질보증기간 경과)",
+                  "resolution": "감가함(세탁업배상비율 참조)",
+                  "sub_conditions": [],
+                  "notes": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "dispute_type": "봉제불량",
+          "resolution": "①무상수리 → ②교환 → ③환급",
+          "conditions": [],
+          "notes": [
+            {
+              "note_title": "교환/환급기준",
+              "content": [],
+              "sub_notes": [
+                {
+                  "condition": "(품질보증기간 이내)",
+                  "resolution": "구입가 기준",
+                  "sub_conditions": [],
+                  "notes": []
+                },
+                {
+                  "condition": "(품질보증기간 경과)",
+                  "resolution": "감가함(세탁업배상비율 참조)",
+                  "sub_conditions": [],
+                  "notes": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "dispute_type": "염색불량",
+          "resolution": "①무상수리 → ②교환 → ③환급",
+          "conditions": [],
+          "notes": [
+            {
+              "note_title": "교환/환급기준",
+              "content": [],
+              "sub_notes": [
+                {
+                  "condition": "(품질보증기간 이내)",
+                  "resolution": "구입가 기준",
+                  "sub_conditions": [],
+                  "notes": []
+                },
+                {
+                  "condition": "(품질보증기간 경과)",
+                  "resolution": "감가함(세탁업배상비율 참조)",
+                  "sub_conditions": [],
+                  "notes": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "dispute_type": "부자재 불량",
+          "resolution": "①무상수리 → ②교환 → ③환급",
+          "conditions": [],
+          "notes": [
+            {
+              "note_title": "교환/환급기준",
+              "content": [],
+              "sub_notes": [
+                {
+                  "condition": "(품질보증기간 이내)",
+                  "resolution": "구입가 기준",
+                  "sub_conditions": [],
+                  "notes": []
+                },
+                {
+                  "condition": "(품질보증기간 경과)",
+                  "resolution": "감가함(세탁업배상비율 참조)",
+                  "sub_conditions": [],
+                  "notes": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "dispute_type": "디자인·색상불만",
+          "resolution": "교환 또는 환급 (구입 후 7일 이내로 미사용 시)",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 26
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "⑧가방류",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "봉제불량",
+          "resolution": "①무상수리 → ②교환 → ③환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "원단불량",
+          "resolution": "①무상수리 → ②교환 → ③환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "3",
+          "dispute_type": "부자재불량",
+          "resolution": "①무상수리 → ②교환 → ③환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "4",
+          "dispute_type": "염색불량",
+          "resolution": "①무상수리 → ②교환 → ③환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "5",
+          "dispute_type": "설명서에 의한 정상적인 세탁 후 변형 변질이 있는 경우",
+          "resolution": "①무상수리 → ②교환 → ③환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "6",
+          "dispute_type": "디자인.색상불만",
+          "resolution": "교환 또는 환급(구입 후 7일 이내로 미사용 시)",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 26
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "⑲신 발",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "봉제불량",
+          "resolution": "①무상수리 → ②교환 → ③환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "보상제외, 소비자과실, 부주의, 하자, 장기착화제품",
+              "content": "* 보상제외\n* 소비자과실 및 부주의로 인한 하자\n* 장기착화제품",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "dispute_type": "접착불량",
+          "resolution": "①무상수리 → ②교환 → ③환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "보상제외, 소비자과실, 부주의, 하자, 장기착화제품",
+              "content": "* 보상제외\n* 소비자과실 및 부주의로 인한 하자\n* 장기착화제품",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "dispute_type": "염색불량",
+          "resolution": "①무상수리 → ②교환 → ③환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "보상제외, 소비자과실, 부주의, 하자, 장기착화제품",
+              "content": "* 보상제외\n* 소비자과실 및 부주의로 인한 하자\n* 장기착화제품",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "dispute_type": "부자재 불량",
+          "resolution": "①무상수리 → ②교환 → ③환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "수리불가능, 교환",
+              "content": "* 수리불가능 시는 교환",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "dispute_type": "치수(사이즈)가 맞지 않거나 디자인 및 색상 불만",
+          "resolution": "교환 또는 환급 (구입 후 7일 이내로 미착용 시)",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "교환/환급기준, 품질보증기간, 구입가, 감가, 세탁업배상비율",
+              "content": "* 교환/환급기준\n* (품질보증기간 이내) 구입가 기준\n* (품질보증기간 경과) 감가함(세탁업배상비율 참조)",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "dispute_type": "방수화에 물이 스며듦",
+          "resolution": "①무상수리 → ②교환 → ③환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "교환/환급기준, 품질보증기간, 구입가, 감가, 세탁업배상비율",
+              "content": "* 교환/환급기준\n* (품질보증기간 이내) 구입가 기준\n* (품질보증기간 경과) 감가함(세탁업배상비율 참조)",
+              "matched_by": "keyword"
+            }
+          ]
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 27
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "⑳우 산 류",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "제품구입 후 1개월 이내에 발생한 품질상 하자",
+          "resolution": "제품교환",
+          "conditions": [
+            {
+              "condition": "부속품의 고장으로 접고 펴지지 않을 경우",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "구입 시 녹이 묻어 있는 경우",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "원단의 색상이 변색·퇴색되는 경우",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "원단불량으로 누수 되는 경우",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "오염된 경우",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": [
+            {
+              "keyword": "품질보증기간",
+              "content": "* 품질보증기간 : 1개월",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "dispute_type": "품질보증기간 이내에 정상적인 사용상태에서 발생한 품질상 하자",
+          "resolution": "무상수리",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "품질보증기간",
+              "content": "* 품질보증기간 : 1개월",
+              "matched_by": "keyword"
+            }
+          ]
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 27
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "(21)가 발",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "품질보증기간 이내에 정상적인 사용상태에서 발생한 성능 기능상의 하자",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "하자발생 시",
+              "resolution": "o 무상수리",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "수리불가능 시",
+              "resolution": "o 제품교환 또는 구입가 환급",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "교환불가능 시",
+              "resolution": "o 구입가 환급",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "교환된제품이 1개월 이내에 중요한 수리를 요할 때",
+              "resolution": "o 구입가 환급",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "소비자가 수리의뢰한 제품을 사업자가 분실한 경우",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "o 제품교환 또는 구입가 환급",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "o 정액감가상각한 금액에 10% 가산하여 환급(최고한도 : 구입가격)",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "3",
+          "dispute_type": "사업자의 귀책사유로 인한 계약해제",
+          "resolution": "o 계약금 환급 및 제품 가격의 10% 배상",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "4",
+          "dispute_type": "소비자의 귀책사유로 인한 계약해제",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "제작이전",
+              "resolution": "o 제품가격의 10% 공제 후 환급",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "제작이 진행된 이후",
+              "resolution": "o 제작에 소요된 실손해 배상",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "keyword": "실손해액",
+                  "content": "* 실손해액은 사업자가 입증해야 함.",
+                  "matched_by": "keyword"
+                }
+              ]
+            },
+            {
+              "condition": "제작완료 후",
+              "resolution": "o 계약해제 불가",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 28
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "(22)의 복 류",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "봉제불량",
+          "resolution": "o ①무상수리 → ②교환 → ③환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "수리 불가능",
+              "content": "* 수리 불가능 시는 교환",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "dispute_type": "원단불량(제직불량, 세탁 후 변색, 탈색, 수축 등)",
+          "resolution": "o ①무상수리 → ②교환 → ③환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "수리 불가능",
+              "content": "* 수리 불가능 시는 교환",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "dispute_type": "부자재불량(단추, 지퍼, 천조각, 실오라기 등)",
+          "resolution": "o ①무상수리 → ②교환 → ③환급",
+          "conditions": [],
+          "notes": [
+            {
+              "note_title": "* 배상",
+              "sub_notes": [
+                {
+                  "condition": "맞춤복 원부자재 불량의 경우",
+                  "resolution": "공임까지 배상",
+                  "sub_conditions": [],
+                  "notes": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "dispute_type": "치수(사이즈)의 부정확",
+          "resolution": "o ①무상수리 → ②교환 → ③환급",
+          "conditions": [],
+          "notes": [
+            {
+              "note_title": "* 배상",
+              "sub_notes": [
+                {
+                  "condition": "맞춤복 원부자재 불량의 경우",
+                  "resolution": "공임까지 배상",
+                  "sub_conditions": [],
+                  "notes": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "dispute_type": "부당표시(미표시 및 부실표시) 및 소재구성 부적합으로 인한 세탁사고",
+          "resolution": "o ①무상수리 → ②교환 → ③환급",
+          "conditions": [],
+          "notes": [
+            {
+              "note_title": "* 배상",
+              "sub_notes": [
+                {
+                  "condition": "맞춤복 원부자재 불량의 경우",
+                  "resolution": "공임까지 배상",
+                  "sub_conditions": [],
+                  "notes": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "dispute_type": "치수(사이즈)가 맞지 않거나 디자인.색상 불만",
+          "resolution": "o 교환 또는 환급 (제품구입 후 7일 이내로서 제품에 손상이 없는 경우)",
+          "conditions": [],
+          "notes": [
+            {
+              "note_title": "* 배상",
+              "sub_notes": [
+                {
+                  "condition": "맞춤복 원부자재 불량의 경우",
+                  "resolution": "공임까지 배상",
+                  "sub_conditions": [],
+                  "notes": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7",
+          "dispute_type": "맞춤복의 원부자재 불량",
+          "resolution": "o 수리, 재맞춤, 환급 (원부자재를 선정한 맞춤업자는 원부자재 업자와 연대하여 책임짐)",
+          "conditions": [],
+          "notes": [
+            {
+              "note_title": "* 배상",
+              "sub_notes": [
+                {
+                  "condition": "맞춤복 원부자재 불량의 경우",
+                  "resolution": "공임까지 배상",
+                  "sub_conditions": [],
+                  "notes": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "notes": [
+        {
+          "note_title": "o 교환",
+          "sub_notes": [
+            {
+              "condition": "동일가격, 동일제품교환을 원칙으로 함.",
+              "resolution": "",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "상하 일착인 경우 한쪽에만 이상이 있어도",
+              "resolution": "일착으로 처리함.",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ]
+        },
+        {
+          "keyword": "배상, 맞춤복, 원단불량, 공임",
+          "content": "o 배상 : 맞춤복은 원단불량일 경우 공임까지 배상함.",
+          "matched_by": "keyword"
+        },
+        {
+          "keyword": "보상순위, 무상수리, 교환, 환급",
+          "content": "o 보상순위 : 보상은 무상수리, 교환, 환급의 순으로 함.",
+          "matched_by": "keyword"
+        },
+        {
+          "note_title": "o 하자원인 규명",
+          "sub_notes": [
+            {
+              "condition": "시험검사 불가 등의 사유로 하자원인 규명이 곤란할 경우",
+              "resolution": "제조업자(판매사업자, 수입업자)는 당해 의류의 품질이 정상적임을 규명하여야 함.(구입 후 2년 이내의 제품에 한함)",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ]
+        },
+        {
+          "note_title": "o 교환 및 환급기준",
+          "sub_notes": [
+            {
+              "condition": "교환 또는 환급은 구입가격기준을 원칙으로 함.",
+              "resolution": "단, 품질보증기간 이내 제품은 구입가 환급, 품질보증기간 경과 제품은 감가(세탁업배상비율표 적용)함.",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "표시가격 변동 시의 구입 및 특수매장 구입여부를 불문하고,",
+              "resolution": "구입처 교환을 원칙으로 함.",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "상하 일착인 경우 한쪽에만 이상이 있어도",
+              "resolution": "일착으로 처리함. 단, 소재 및 디자인이 다를 경우엔 해당의류만 교환함.",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "환급요구 시",
+              "resolution": "영수증을 제시해야함.",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ]
+        }
+      ],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 29
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "(23)농업용기계, 어업용기계",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "정상적인 사용상태에서 발생한 성능ㆍ기능상의 하자",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "제품의 결함으로 인하여 발생한 고장",
+                  "resolution": "제품교환",
+                  "notes": []
+                },
+                {
+                  "condition": "재질 및 소재불량으로 인한 고장",
+                  "resolution": "무상수리",
+                  "notes": []
+                },
+                {
+                  "condition": "가공치수 불량으로 인한 고장",
+                  "resolution": "무상수리",
+                  "notes": []
+                },
+                {
+                  "condition": "조립불량 또는 설치 잘못으로 인한 고장",
+                  "resolution": "제품교환 또는 구입가 환급",
+                  "notes": []
+                },
+                {
+                  "condition": "주요성능·기능상의 동일하자에 대해 2회까지 수리했으나 고장이 재발(3회째)",
+                  "resolution": "무상수리",
+                  "notes": []
+                },
+                {
+                  "condition": "포장 및 수송 불량으로 발생한 고장",
+                  "resolution": "무상수리",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "수리 불가능 시",
+                  "resolution": "정액 감가상각한 금액에 10%를 가산하여 환급1)",
+                  "notes": [
+                    {
+                      "keyword": "부품보유기간",
+                      "content": "1)다만, 부품보유기간(내용연수)에 한하여 적용",
+                      "matched_by": "keyword"
+                    }
+                  ]
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "notes": [
+            {
+              "keyword": "현지 출장수리",
+              "content": "다음의 경우에 사업자는 현지 출장수리\nㆍ소비자의 현품운송거부\nㆍ현품운송곤란 또는 운송비 과다\nㆍ농번기",
+              "matched_by": "keyword"
+            },
+            {
+              "keyword": "품질보증기간",
+              "content": "소비자가 품질보증기간 이내에 수리 등을 요청하였으나 사업자측 사정으로 품질보증기간을 경과하여 완료된 경우, 품질보증기간이 경과되었는지 여부는 수리 등이 사업자측에 접수된 날을 기준으로 판단함",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "dispute_type": "수리용 부품을 보유하지 않아(부품보유기간 이내) 발생한 피해",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "정상적인 사용상태에서 성능·기능상의 하자로 인해 발생한 경우",
+                  "resolution": "제품교환 또는 구입가 환급",
+                  "notes": []
+                },
+                {
+                  "condition": "소비자의 고의·과실로 인한 고장인 경우",
+                  "resolution": "유상수리비 부담 후 제품교환",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "정액감가상각한 잔여금액에 구입가의 10%를 가산하여 환급",
+              "sub_conditions": [],
+              "notes": []
+            }
+          ],
+          "notes": [
+            {
+              "keyword": "감가상각방법",
+              "content": "감가상각방법 : 정액법, 내용연수는 별표Ⅳ 품목별 내용연수표(월할계산) 적용",
+              "matched_by": "keyword"
+            },
+            {
+              "keyword": "감가상각비 계산",
+              "content": "감가상각비 계산 : (사용연수/내용연수)×구입가",
+              "matched_by": "keyword"
+            },
+            {
+              "keyword": "감가상각 잔여금 계산",
+              "content": "감가상각 잔여금 계산 : 구입가-감가상각비",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "dispute_type": "정당한 사유의 통보없이 약정한 날로부터 수리기간이 10일 이상을 초과할 경우(농번기 중)",
+          "resolution": "피해배상",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 30
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "(24)농업용 자재",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "품질불량",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "제품하자로 인한 피해",
+          "resolution": "손해배상",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 31
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "(25)어구",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "품질불량",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "제품하자로 인한 피해",
+          "resolution": "손해배상",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 31
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "(26)축산자재",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "품질불량",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "제품하자로 인한 피해",
+          "resolution": "손해배상",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 31
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "(27)건축자재(위생기구)",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "품질불량\n(작동불량, 색채불량, 균열, 도금불량, 기준규격 미달 등)",
+          "resolution": "o 시공 전 : 교환, 환급\n시공 후 : 수리, 배상",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "시공 상의 하자\n(파손, 작동불량, 균열, 누수)",
+          "resolution": "o 수리, 배상",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 32
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "(28)건축자재(벽지)",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "품질불량\n(변·퇴색, 색채불량, 기준규격 미달 등)",
+          "resolution": "o 시공 전 : 교환, 환급\n시공 후 : 수리, 배상",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "시공 상의 하자\n(변·퇴색, 보풀현상)",
+          "resolution": "o 수리, 배상",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 32
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "(29)건축자재(타일)",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "품질불량\n(변·퇴색, 기준규격 미달 등)",
+          "resolution": "o 시공 전 : 교환, 환급\n시공 후 : 수리, 배상",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "시공 상의 하자\n(백화·동해현상, 접착불량, 매직불량)",
+          "resolution": "o 수리, 배상",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 32
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "(30)건축자재(F.R.P. Tank)",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "품질불량\n(부식, 규격미달, 이음쇠불량)",
+          "resolution": "o 시공 전 : 교환, 환급\n시공 후 : 수리, 배상",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "시공 상의 하자\n(누수, 부식, 이음쇠불량)",
+          "resolution": "o 배상",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 32
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "(31)건축자재(페인트류)",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "품질불량 (색상불량, 응고 등)",
+          "resolution": "o 시공 전 : 교환, 환급\no 시공 후 : 수리, 배상",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "시공 상의 하자 (색채·광택·배색·마감불량, 변·퇴색)",
+          "resolution": "o 수리, 배상",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "3",
+          "dispute_type": "용량부족",
+          "resolution": "o 교환, 환급",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 33
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "(32)건축자재(시멘트 제품류)",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "품질불량 (균열, 강도불량, 기준규격 미달 등)",
+          "resolution": "o 시공 전 : 교환, 환급\no 시공 후 : 수리, 배상",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "시공 상의 하자 (균열, 마감불량)",
+          "resolution": "o 수리, 배상",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 33
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "(33)건축자재(창호재)",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "품질불량 (작동불량, 파손, 기준규격 미달 등)",
+          "resolution": "o 시공 전 : 교환, 환급\no 시공 후 : 수리, 배상",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "시공 상의 하자 (작동불량, 파손)",
+          "resolution": "o 수리, 배상",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 33
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "5. 공산품(34개 품목)",
+      "소분류": "(34)건축자재(목재류)",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "품질불량 (파손, 균열, 규격미달, 색채불량, 건조불량 등)",
+          "resolution": "o 시공 전 : 교환, 환급\no 시공 후 : 수리, 배상",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "시공 상의 하자 (파손, 접착불량, 마감불량 등)",
+          "resolution": "o 수리, 배상",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 33
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "6. 의약품 및 화학제품(10개 품종)",
+      "소분류": "①의약품, ②의약외품",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "이물혼입",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "가축폐사",
+              "content": "가축폐사의 경우 가축 가격을 보상함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "dispute_type": "함량, 크기부적합",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "가축폐사",
+              "content": "가축폐사의 경우 가축 가격을 보상함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "dispute_type": "변질, 부패",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "가축폐사",
+              "content": "가축폐사의 경우 가축 가격을 보상함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "dispute_type": "유효기간 경과",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "가축폐사",
+              "content": "가축폐사의 경우 가축 가격을 보상함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "dispute_type": "용량부족",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "가축폐사",
+              "content": "가축폐사의 경우 가축 가격을 보상함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "dispute_type": "품질·성능·기능 불량",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "가축폐사",
+              "content": "가축폐사의 경우 가축 가격을 보상함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "7",
+          "dispute_type": "용기 불량으로 인한 피해사고",
+          "resolution": "치료비, 경비 및 일실소득 배상",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "일실소득",
+              "content": "일실소득 : 피해로 인하여 소득상실이 발생한 것이 입증된 때에 한하며, 금액을 입증할 수 없는 경우에는 시중 노임단가를 기준으로 함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "8",
+          "dispute_type": "부작용",
+          "resolution": "치료비, 경비 및 일실소득 배상",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "일실소득",
+              "content": "일실소득 : 피해로 인하여 소득상실이 발생한 것이 입증된 때에 한하며, 금액을 입증할 수 없는 경우에는 시중 노임단가를 기준으로 함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "9",
+          "dispute_type": "수량부족",
+          "resolution": "부족수량 지급",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 34
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "6. 의약품 및 화학제품(10개 품종)",
+      "소분류": "③ 의료기기",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "구입 후 1개월 이내에 정상적인 사용 상태에서 발생한 성능·기능상의 하자로 수리를 요할 때",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "정상적인 사용 상태에서 발생한 성능·기능상의 하자",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "하자 발생 시",
+                  "resolution": "무상 수리",
+                  "notes": []
+                },
+                {
+                  "condition": "수리하였으나 고장이 재발(2회째)",
+                  "resolution": "제품교환 또는 구입가 환급",
+                  "notes": []
+                },
+                {
+                  "condition": "수리 불가능 시",
+                  "resolution": "제품교환 또는 구입가 환급",
+                  "notes": []
+                },
+                {
+                  "condition": "교환 불가능 시",
+                  "resolution": "구입가 환급",
+                  "notes": []
+                },
+                {
+                  "condition": "교환된 제품이 1개월 이내에 중요한 수리를 요할 때",
+                  "resolution": "구입가 환급",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "수리 불가능 시",
+                  "resolution": "정액 감가상각한 금액에 10%를 가산하여 환급¹⁾",
+                  "notes": [
+                    {
+                      "keyword": "부품보유기간",
+                      "content": "* 1)다만, 부품보유기간(내용연수)에 한정하여 적용",
+                      "matched_by": "keyword",
+                      "sub_notes": [
+                        {
+                          "note_title": "감가상각방법",
+                          "content": [
+                            "정액법, 내용연수는 별표Ⅳ 품목별 내용연수표(월할계산) 적용"
+                          ],
+                          "sub_notes": []
+                        },
+                        {
+                          "note_title": "감가상각비 계산",
+                          "content": [
+                            "(사용연수/내용연수)×구입가"
+                          ],
+                          "sub_notes": []
+                        },
+                        {
+                          "note_title": "감가상각 잔여금 계산",
+                          "content": [
+                            "구입가 - 감가상각비"
+                          ],
+                          "sub_notes": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "notes": [
+            {
+              "keyword": "품질보증기간",
+              "content": "* 소비자가 품질보증기간 이내에 수리 등을 요청하였으나 사업자측 사정에 의한 지연 등으로 품질보증기간을 경과하여 완료된 경우, 품질보증기간이 경과되었는지 여부는 수리 등이 접수된 날을 기준으로 판단함",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "dispute_type": "부품보유기간 이내에 수리용 부품을 보유하고 있지 않아 발생한 피해",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "정상적인 상태에서 자연 발생한 성능·기능상의 하자로 인해 발생된 경우",
+                  "resolution": "제품교환 또는 구입가 환급",
+                  "notes": []
+                },
+                {
+                  "condition": "소비자의 고의·과실로 인한 고장인 경우",
+                  "resolution": "유상수리에 해당하는 금액 징수 후 제품교환",
+                  "notes": []
+                }
+              ],
+              "notes": []
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "",
+              "sub_conditions": [
+                {
+                  "condition": "수리 불가능 시",
+                  "resolution": "정액감가상각한 금액에 10%를 가산하여 환급(한도 : 구입가격)",
+                  "notes": [
+                    {
+                      "keyword": "부품보유기간",
+                      "content": "* 1)다만, 부품보유기간(내용연수)에 한정하여 적용",
+                      "matched_by": "keyword",
+                      "sub_notes": [
+                        {
+                          "note_title": "감가상각방법",
+                          "content": [
+                            "정액법, 내용연수는 별표Ⅳ 품목별 내용연수표(월할계산) 적용"
+                          ],
+                          "sub_notes": []
+                        },
+                        {
+                          "note_title": "감가상각비 계산",
+                          "content": [
+                            "(사용연수/내용연수)×구입가"
+                          ],
+                          "sub_notes": []
+                        },
+                        {
+                          "note_title": "감가상각 잔여금 계산",
+                          "content": [
+                            "구입가 - 감가상각비"
+                          ],
+                          "sub_notes": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "notes": []
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "4",
+          "dispute_type": "소비자가 수리 의뢰한 제품을 사업자가 분실한 경우",
+          "resolution": "",
+          "conditions": [
+            {
+              "condition": "품질보증기간 이내",
+              "resolution": "제품교환 또는 구입가 환급",
+              "sub_conditions": [],
+              "notes": []
+            },
+            {
+              "condition": "품질보증기간 경과 후",
+              "resolution": "정액감가상각한 금액에 10%를 가산하여 환급",
+              "sub_conditions": [],
+              "notes": [
+                {
+                  "keyword": "부품보유기간",
+                  "content": "* 1)다만, 부품보유기간(내용연수)에 한정하여 적용",
+                  "matched_by": "keyword",
+                  "sub_notes": [
+                    {
+                      "note_title": "감가상각방법",
+                      "content": [
+                        "정액법, 내용연수는 별표Ⅳ 품목별 내용연수표(월할계산) 적용"
+                      ],
+                      "sub_notes": []
+                    },
+                    {
+                      "note_title": "감가상각비 계산",
+                      "content": [
+                        "(사용연수/내용연수)×구입가"
+                      ],
+                      "sub_notes": []
+                    },
+                    {
+                      "note_title": "감가상각 잔여금 계산",
+                      "content": [
+                        "구입가 - 감가상각비"
+                      ],
+                      "sub_notes": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "notes": []
+        },
+        {
+          "id": "5",
+          "dispute_type": "제품하자로 인한 상해사고",
+          "resolution": "치료비, 경비 및 일실소득 배상",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 35
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "6. 의약품 및 화학제품(10개 품종)",
+      "소분류": "④ 화장품",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "이물혼입",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "치료비 지급",
+              "content": "치료비 지급 : 피부과 전문의의 진단 및 처방에 의한 질환 치료 목적인 경우로 한 함. 단, 화장품과의 인과관계가 있어야 하며, 자의로 행한 성형ㆍ미용관리 목적으로 인한 경우에는 지급하지 아니함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "dispute_type": "함량부적합",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "치료비 지급",
+              "content": "치료비 지급 : 피부과 전문의의 진단 및 처방에 의한 질환 치료 목적인 경우로 한 함. 단, 화장품과의 인과관계가 있어야 하며, 자의로 행한 성형ㆍ미용관리 목적으로 인한 경우에는 지급하지 아니함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "dispute_type": "변질.부패",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "치료비 지급",
+              "content": "치료비 지급 : 피부과 전문의의 진단 및 처방에 의한 질환 치료 목적인 경우로 한 함. 단, 화장품과의 인과관계가 있어야 하며, 자의로 행한 성형ㆍ미용관리 목적으로 인한 경우에는 지급하지 아니함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "dispute_type": "사용기한 경과",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "치료비 지급",
+              "content": "치료비 지급 : 피부과 전문의의 진단 및 처방에 의한 질환 치료 목적인 경우로 한 함. 단, 화장품과의 인과관계가 있어야 하며, 자의로 행한 성형ㆍ미용관리 목적으로 인한 경우에는 지급하지 아니함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "dispute_type": "용량부족",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "치료비 지급",
+              "content": "치료비 지급 : 피부과 전문의의 진단 및 처방에 의한 질환 치료 목적인 경우로 한 함. 단, 화장품과의 인과관계가 있어야 하며, 자의로 행한 성형ㆍ미용관리 목적으로 인한 경우에는 지급하지 아니함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "dispute_type": "품질.성능.기능 불량",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "치료비 지급",
+              "content": "치료비 지급 : 피부과 전문의의 진단 및 처방에 의한 질환 치료 목적인 경우로 한 함. 단, 화장품과의 인과관계가 있어야 하며, 자의로 행한 성형ㆍ미용관리 목적으로 인한 경우에는 지급하지 아니함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "7",
+          "dispute_type": "용기 불량으로 인한 피해사고",
+          "resolution": "치료비, 경비 및 일실소득 배상",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "일실소득",
+              "content": "일실소득 : 피해로 인하여 소득상실이 발생한 것이 입증된 때에 한하며, 금액을 입증할 수 없는 경우 시중 노임단가를 기준으로 함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "8",
+          "dispute_type": "부작용",
+          "resolution": "치료비, 경비 및 일실소득 배상",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "일실소득",
+              "content": "일실소득 : 피해로 인하여 소득상실이 발생한 것이 입증된 때에 한하며, 금액을 입증할 수 없는 경우 시중 노임단가를 기준으로 함.",
+              "matched_by": "keyword"
+            }
+          ]
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 36
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "6. 의약품 및 화학제품(10개 품종)",
+      "소분류": "⑤ 비누 및 합성세제",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "성분.함량부족",
+          "resolution": "제품교환",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "실량 미달",
+          "resolution": "제품교환",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 36
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "6. 의약품 및 화학제품(10개 품종)",
+      "소분류": "⑥ 플라스틱 제품",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "품질불량",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "부작용",
+          "resolution": "치료비, 경비 및 임금 배상",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "3",
+          "dispute_type": "시공 상의 하자",
+          "resolution": "수리 또는 배상",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 36
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "6. 의약품 및 화학제품(10개 품종)",
+      "소분류": "⑦비료",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "성분 이상",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "용량 부족",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "3",
+          "dispute_type": "제품의 하자로 인한 작물 피해 시",
+          "resolution": "경비 및 예상수익액 배상",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "4",
+          "dispute_type": "부작용",
+          "resolution": "치료비, 경비 및 임금배상",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 37
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "6. 의약품 및 화학제품(10개 품종)",
+      "소분류": "⑧농약",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "성분 이상",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "예상수익",
+              "content": "* 예상수익은 당해작물의 최근 3년간 평균수확량에 당해연도 농가수취가격을 곱한 금액으로 산출함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "dispute_type": "용량 부족",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "예상수익",
+              "content": "* 예상수익은 당해작물의 최근 3년간 평균수확량에 당해연도 농가수취가격을 곱한 금액으로 산출함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "dispute_type": "유효기간 경과",
+          "resolution": "제품교환 또는 구입가 환급",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "예상수익",
+              "content": "* 예상수익은 당해작물의 최근 3년간 평균수확량에 당해연도 농가수취가격을 곱한 금액으로 산출함.",
+              "matched_by": "keyword"
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "dispute_type": "제품의 하자로 인한 작물 피해 시",
+          "resolution": "경비 및 예상수익액 배상",
+          "conditions": [],
+          "notes": [
+            {
+              "keyword": "예상수익",
+              "content": "* 예상수익은 당해작물의 최근 3년간 평균수확량에 당해연도 농가수취가격을 곱한 금액으로 산출함.",
+              "matched_by": "keyword"
+            }
+          ]
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 37
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "6. 의약품 및 화학제품(10개 품종)",
+      "소분류": "⑨고무장갑",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "물이 새어 들어오는 경우",
+          "resolution": "제품교환",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "양념류나 기타 접촉물에 쉽게 착색되는 경우",
+          "resolution": "제품교환",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "3",
+          "dispute_type": "인체에 유해한 물질이 함유되어 있는 경우",
+          "resolution": "제품교환",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 37
+    },
+    {
+      "대분류": "Ⅰ. 상품(재화)",
+      "중분류": "6. 의약품 및 화학제품(10개 품종)",
+      "소분류": "⑩건전지",
+      "items": [
+        {
+          "id": "1",
+          "dispute_type": "외관 불량",
+          "resolution": "제품교환",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "2",
+          "dispute_type": "선이 절단된 경우",
+          "resolution": "제품교환",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "3",
+          "dispute_type": "제품에 치수가 잘못 기재된 경우",
+          "resolution": "제품교환",
+          "conditions": [],
+          "notes": []
+        },
+        {
+          "id": "4",
+          "dispute_type": "제조상의 하자에 의해 누액이 발생하는 경우",
+          "resolution": "제품교환 및 사용제품 하자발생 시 무상수리 또는 손해배상",
+          "conditions": [],
+          "notes": []
+        }
+      ],
+      "notes": [],
+      "reference": {
+        "근거법령": "",
+        "기타법령": ""
+      },
+      "source_page": 37
+    }
+  ],
+  "parsing_metadata": {
+    "parsing_date": "2026-01-18",
+    "total_pages": 37,
+    "parsed_pages": "1-37",
+    "parsing_strategy": "Google Gemini 2.5 Flash Vision API",
+    "note_mapping_method": "AI-based keyword extraction with position fallback",
+    "structure": "Each table as separate entry, forward-fill for empty 대분류/중분류"
+  }
+}

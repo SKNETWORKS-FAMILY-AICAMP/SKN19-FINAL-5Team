@@ -1,0 +1,266 @@
+name: Deploy to Production
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:  # Manual trigger support
+    inputs:
+      image_tag:
+        description: 'Image tag to deploy (default: latest)'
+        required: false
+        default: 'latest'
+
+env:
+  AWS_REGION: ap-northeast-2
+  EC2_HOST: 15.165.215.141
+
+jobs:
+  # Wait for build to complete first (skip for manual dispatch)
+  wait-for-build:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'workflow_dispatch'
+    steps:
+      - name: Wait for Build workflow
+        uses: lewagon/wait-on-check-action@v1.3.4
+        with:
+          ref: ${{ github.ref }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          check-name: build-and-push
+          wait-interval: 30
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: wait-for-build
+    if: always() && (needs.wait-for-build.result == 'success' || needs.wait-for-build.result == 'skipped')
+    environment: production  # Requires manual approval in GitHub settings
+    permissions:
+      id-token: write
+      contents: read
+    env:
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get version from tag or input
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "VERSION=${{ inputs.image_tag || 'latest' }}" >> $GITHUB_OUTPUT
+          else
+            echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Get ECR Login
+        id: ecr-login
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Deploy to Production
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ env.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          command_timeout: 5m
+          timeout: 60s
+          script: |
+            set -e  # 에러 시 즉시 종료
+            cd /home/ubuntu/ddoksori
+
+            # Backup current deployment
+            echo "Creating backup..."
+            mkdir -p backups
+            docker compose -f docker-compose.prod.yml config > backups/backup-$(date +%Y%m%d-%H%M%S).yml 2>/dev/null || true
+
+            # ECR Login
+            aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin ${{ steps.ecr-login.outputs.registry }}
+
+            # Pull new version with specific tag
+            export ECR_REGISTRY=${{ steps.ecr-login.outputs.registry }}
+            export IMAGE_TAG=${{ steps.version.outputs.VERSION }}
+            docker compose -f docker-compose.prod.yml pull
+
+            # Rolling update
+            echo "Deploying version $IMAGE_TAG..."
+            docker compose -f docker-compose.prod.yml up -d --remove-orphans
+
+            # Cleanup old images (keep last 3)
+            docker image prune -f
+
+            # Show status
+            echo "Deployment complete:"
+            docker compose -f docker-compose.prod.yml ps
+
+            # === Smoke Test ===
+            echo "Waiting 30s for services to start..."
+            sleep 30
+
+            echo "=== Running Smoke Tests ==="
+
+            # 1. Health Check (필수 - DB 연결 확인)
+            echo "Testing /health..."
+            HEALTH=$(curl -sf http://localhost:8000/health || echo '{"status":"error"}')
+            if ! echo "$HEALTH" | grep -q '"status":"healthy"'; then
+              echo "FAILED: /health"
+              echo "Response: $HEALTH"
+              echo "=== Backend Logs ==="
+              docker compose -f docker-compose.prod.yml logs --tail 50 backend
+              exit 1
+            fi
+            echo "OK: /health - DB connected"
+
+            # 2. LLM Check (경고만 - 외부 서비스)
+            echo "Testing /health/llm/supervisor..."
+            LLM=$(curl -sf http://localhost:8000/health/llm/supervisor || echo '{"status":"error"}')
+            if echo "$LLM" | grep -q '"status":"healthy"'; then
+              echo "OK: /health/llm/supervisor"
+            else
+              echo "WARNING: /health/llm/supervisor unhealthy (non-blocking)"
+            fi
+
+            # 3. Embedding Check (경고만 - 외부 서비스)
+            echo "Testing /health/embedding..."
+            EMBED=$(curl -sf http://localhost:8000/health/embedding || echo '{"status":"error"}')
+            if echo "$EMBED" | grep -q '"status":"healthy"'; then
+              echo "OK: /health/embedding"
+            else
+              echo "WARNING: /health/embedding unhealthy (non-blocking)"
+            fi
+
+            # 4. Root endpoint (필수 - API 서버 응답)
+            echo "Testing /..."
+            ROOT=$(curl -sf http://localhost:8000/ || echo '')
+            if [ -z "$ROOT" ]; then
+              echo "FAILED: / endpoint returned empty"
+              exit 1
+            fi
+            echo "OK: / endpoint"
+
+
+            # 5. OAuth Configuration Check (경고 - OAuth 로그인 검증)
+            echo "Checking OAuth configuration..."
+            OAUTH_OK=true
+            for VAR in GOOGLE_CLIENT_ID NAVER_CLIENT_ID; do
+              VAL=$(docker exec $(docker ps --filter "name=backend" --format "{{.Names}}" | head -1) printenv $VAR 2>/dev/null || echo "")
+              if [ -z "$VAL" ] || [ "$VAL" = "None" ] || [ "$VAL" = "null" ]; then
+                echo "WARNING: $VAR is empty or invalid ('$VAL') - OAuth login will not work"
+                OAUTH_OK=false
+              fi
+            done
+            if [ "$OAUTH_OK" = "true" ]; then
+              echo "OK: OAuth client_id configured"
+            fi
+            echo "=== Smoke Tests Completed ==="
+
+      - name: Health Check
+        run: |
+          echo "Waiting for services to start..."
+          sleep 30
+
+          # Backend health check (Nginx:80 → Backend:8000 프록시)
+          for i in {1..10}; do
+            if curl -sf http://${{ env.EC2_HOST }}/health; then
+              echo "Backend is healthy!"
+              break
+            fi
+            echo "Attempt $i failed, retrying in 15s..."
+            sleep 15
+          done
+
+          # Final verification
+          curl -f http://${{ env.EC2_HOST }}/health || exit 1
+
+      - name: Discord Notification - Success
+        if: success() && env.DISCORD_WEBHOOK != ''
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          status: success
+          title: "🚀 Production Deployment"
+          color: 0x00ff00
+          description: |
+            **Status**: Success
+            **Version**: `${{ steps.version.outputs.VERSION }}`
+            **Commit**: `${{ github.sha }}`
+            **URL**: http://${{ env.EC2_HOST }}
+
+            Production deployment completed successfully!
+
+      - name: Discord Notification - Failure
+        if: failure() && env.DISCORD_WEBHOOK != ''
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          status: failure
+          title: "🔥 Production Deployment Failed"
+          color: 0xff0000
+          description: |
+            **Status**: Failed
+            **Version**: `${{ steps.version.outputs.VERSION }}`
+            **Commit**: `${{ github.sha }}`
+
+            ⚠️ Manual intervention may be required.
+            Consider rolling back to previous version.
+
+  # Rollback job (manual trigger)
+  rollback:
+    runs-on: ubuntu-latest
+    if: failure() && needs.deploy.result == 'failure'
+    needs: deploy
+    environment: production-rollback
+    permissions:
+      id-token: write
+      contents: read
+    env:
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Get ECR Login
+        id: ecr-login
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Rollback to previous version
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ env.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd /home/ubuntu/ddoksori
+
+            # ECR Login
+            aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin ${{ steps.ecr-login.outputs.registry }}
+
+            # Rollback to latest (previous stable)
+            export ECR_REGISTRY=${{ steps.ecr-login.outputs.registry }}
+            export IMAGE_TAG=latest
+            docker compose -f docker-compose.prod.yml pull
+            docker compose -f docker-compose.prod.yml up -d
+
+            echo "Rolled back to latest stable version"
+            docker compose -f docker-compose.prod.yml ps
+
+      - name: Discord Notification - Rollback
+        if: env.DISCORD_WEBHOOK != ''
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          status: ${{ job.status }}
+          title: "🔄 Production Rollback"
+          description: |
+            **Status**: ${{ job.status }}
+            **Action**: Rolled back to previous stable version
+
+            Please investigate the failed deployment.

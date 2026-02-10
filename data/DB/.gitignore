@@ -1,0 +1,34 @@
+# 환경 변수 파일 (비밀번호 포함)
+.env
+
+# PostgreSQL 데이터 볼륨
+data/
+
+# Python 가상 환경
+venv/
+env/
+.venv/
+
+# Python 캐시
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# IDE 설정
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 로그 파일
+*.log
+
+# 임시 파일
+*.tmp
+*.bak
+
+# 백업 파일
+*_backup.*
