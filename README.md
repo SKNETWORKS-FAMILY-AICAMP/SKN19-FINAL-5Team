@@ -31,6 +31,7 @@
 |:---:|:---:|:---:|:---:|:---:|
 | **강지완** | **박도연** | **박진형** | **이상혁** | **임상민** |
 | [![GitHub](https://img.shields.io/badge/GitHub-Maroco0109-blue?logo=github)](https://github.com/Maroco0109) | [![GitHub](https://img.shields.io/badge/GitHub-pdyeon999-blue?logo=github)](https://github.com/pdyeon999) | [![GitHub](https://img.shields.io/badge/GitHub-vispi94-blue?logo=github)](https://github.com/vispi94) | [![GitHub](https://img.shields.io/badge/GitHub-sangpiri-blue?logo=github)](https://github.com/sangpiri) | [![GitHub](https://img.shields.io/badge/GitHub-colaa222-blue?logo=github)](https://github.com/colaa222) |
+| MAS 설계, 백엔드<br>AWS, CI/CD | 데이터<br>검색 Agent | 데이터<br>답변생성 Agent | 데이터, AWS RDS 구축<br>프론트엔드, 백엔드 API | 데이터<br>검색 Agent |
 
 ---
 
