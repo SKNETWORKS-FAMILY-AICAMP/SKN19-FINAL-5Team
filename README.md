@@ -4,24 +4,37 @@
 
 > 복잡한 소비자 분쟁 문의에 대해 법령, 분쟁조정사례, 상담사례를 기반으로 정확하고 신뢰도 높은 답변을 제공합니다.
 
-최종 수정일: 2026-02-09
-
 ---
 
 ## 목차
 
-- [프로젝트 개요](#1-프로젝트-개요)
-- [왜 MAS인가?](#2-왜-mas인가)
-- [Happy Path (E2E)](#3-happy-path-e2e)
-- [CI/CD 파이프라인](#4-cicd-파이프라인)
-- [Quickstart](#5-quickstart)
-- [Configuration](#6-configuration)
-- [Architecture](#7-architecture)
-- [Documentation Hub](#8-documentation-hub)
+- [팀 소개](#1-팀-소개)
+- [프로젝트 개요](#2-프로젝트-개요)
+- [왜 MAS인가?](#3-왜-mas인가)
+- [Happy Path (E2E)](#4-happy-path-e2e)
+- [CI/CD 파이프라인](#5-cicd-파이프라인)
+- [Quickstart](#6-quickstart)
+- [Configuration](#7-configuration)
+- [시스템 아키텍쳐](#8-시스템-아키텍쳐)
+- [시연 영상](#9-시연-영상)
+- [Documentation Hub](#10-documentation-hub)
 
 ---
 
-## 1. 프로젝트 개요
+## 1. 팀 소개
+
+**팀명**: 5작교
+
+**팀원**:
+
+| <img src="https://github.com/user-attachments/assets/22a88892-4075-47d7-9241-3be9c83711ee" width="200" /> | <img src="https://github.com/user-attachments/assets/2e058440-f53e-4ef6-a16e-593bdde72f6f" width="200" /> | <img src="https://github.com/user-attachments/assets/cb25176c-f84b-4c4f-87e1-7fbc379e1493" width="200" /> | <img src="https://github.com/user-attachments/assets/898cca0f-6388-48f3-83b5-2acc3677b525" width="200" /> | <img src="https://github.com/user-attachments/assets/f31e4d00-4eb8-48e8-a50c-ec0e656c7d9f" width="200" /> |
+|:---:|:---:|:---:|:---:|:---:|
+| **강지완** | **박도연** | **박진형** | **이상혁** | **임상민** |
+| [![GitHub](https://img.shields.io/badge/GitHub-Maroco0109-blue?logo=github)](https://github.com/Maroco0109) | [![GitHub](https://img.shields.io/badge/GitHub-pdyeon999-blue?logo=github)](https://github.com/pdyeon999) | [![GitHub](https://img.shields.io/badge/GitHub-vispi94-blue?logo=github)](https://github.com/vispi94) | [![GitHub](https://img.shields.io/badge/GitHub-sangpiri-blue?logo=github)](https://github.com/sangpiri) | [![GitHub](https://img.shields.io/badge/GitHub-colaa222-blue?logo=github)](https://github.com/colaa222) |
+
+---
+
+## 2. 프로젝트 개요
 
 본 프로젝트는 React, FastAPI, LangGraph, PostgreSQL 등 현대적인 기술 스택을 활용하여 한국 소비자 분쟁 관련 문의에 대해 법적 근거가 포함된 신뢰성 높은 답변을 제공하는 MAS(Multi-Agent System) 챗봇입니다.
 
@@ -50,7 +63,7 @@
 
 ---
 
-## 2. 왜 MAS인가?
+## 3. 왜 MAS인가?
 
 ### 단순 RAG vs MAS 비교
 
@@ -89,7 +102,7 @@
 
 ---
 
-## 3. Happy Path (E2E)
+## 4. Happy Path (E2E)
 
 ### 예시 시나리오: "헬스장 환불 받고 싶어요"
 
@@ -172,7 +185,7 @@ sequenceDiagram
 
 ---
 
-## 4. CI/CD 파이프라인
+## 5. CI/CD 파이프라인
 
 ### PR 워크플로우 (develop/main 브랜치)
 
@@ -248,7 +261,7 @@ flowchart LR
 
 ---
 
-## 5. Quickstart
+## 6. Quickstart
 
 ### Local 개발 환경
 
@@ -315,7 +328,7 @@ docker compose down
 
 ---
 
-## 6. Configuration
+## 7. Configuration
 
 `.env` 파일을 통해 시스템 동작을 제어합니다. `.env.example`을 복사하여 사용하세요.
 
@@ -363,7 +376,9 @@ docker compose down
 
 ---
 
-## 7. Architecture
+## 8. 시스템 아키텍쳐
+
+<img src="https://github.com/user-attachments/assets/e88cfff5-8b87-401f-b1eb-b75832446686" alt="시스템 아키텍쳐" />
 
 ### 전체 시스템 구조
 
@@ -462,7 +477,13 @@ Entry → CacheCheck ──HIT──→ CacheResponse → END
 
 ---
 
-## 8. Documentation Hub
+## 9. 시연 영상
+
+https://github.com/user-attachments/assets/1ef8eabc-32ea-4a19-9ee6-ebcacdde6fdf
+
+---
+
+## 10. Documentation Hub
 
 | 문서 | 링크 | 설명 |
 |------|------|------|
@@ -474,3 +495,5 @@ Entry → CacheCheck ──HIT──→ CacheResponse → END
 | **답변 생성** | [backend/app/agents/answer_generation/README.md](backend/app/agents/answer_generation/README.md) | AnswerDrafter 답변 생성 및 Fallback |
 | **법률 검토** | [backend/app/agents/legal_review/README.md](backend/app/agents/legal_review/README.md) | LegalReviewer 환각 검증 및 가드레일 |
 | **Supervisor** | [backend/app/supervisor/README.md](backend/app/supervisor/README.md) | Supervisor 라우팅 및 상태 관리 |
+
+
